@@ -4,7 +4,7 @@ import Link from 'next/link';
 const BottomNavigation = () => {
   return (
     <motion.div
-      className="fixed bottom-4  md:hidden left-1/2 transform -translate-x-1/2 inline-flex left-0 mx-auto justify-between bg-blue-600 w-11/12 rounded-3xl"
+      className="fixed bottom-4  md:hidden  transform -translate-x-1/2 inline-flex left-0 mx-auto justify-between bg-blue-600 w-11/12 rounded-3xl"
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 50 }}
