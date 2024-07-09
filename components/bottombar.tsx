@@ -41,7 +41,7 @@ const BottomNavigation = () => {
               clipRule="evenodd"
             ></path>
           </svg>
-          <span className="sr-only">Bot</span>
+          <span className="sr-only">Ai</span>
         </a>
       </Link>
       <button className="relative inline-flex flex-col items-center text-xs font-medium text-white py-3 px-6 flex-grow">
@@ -59,7 +59,7 @@ const BottomNavigation = () => {
             ></path>
           </svg>
         </div>
-        <span className="sr-only">Ai</span>
+        <span className="sr-only">bot</span>
       </button>
       <Link href="#">
         <a
