@@ -1,45 +1,31 @@
 "use client"
 import * as React from 'react'
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 import { auth } from '@/auth'
-import { IconNextChat } from '@/components/ui/icons'
-import { Session } from '@/lib/types'
 import Loader from '@/components/loader'
-import HomeUi from '@/components/homeui'
 
-const UserOrLogin: React.FC = () => {
+const NoUser: React.FC = () => {
   const router = useRouter()
-  const [session, setSession] = React.useState<Session | null>(null)
   const [loading, setLoading] = React.useState(true)
 
   React.useEffect(() => {
     const fetchSession = async () => {
-      const sessionData = (await auth()) as Session
-      setSession(sessionData)
+      const sessionData = await auth()
       if (sessionData?.user) {
         router.push('/dashboard')
       } else {
-        setLoading(false)
+        router.push('/new')
       }
     }
     fetchSession()
   }, [router])
 
   if (loading) {
-    return <p><Loader /></p>
+    return <Loader />
   }
 
-  return (
-    <>
-      {session?.user ? (
-      <Loader />
-      ) : (
-<HomeUi />
-      )}
-    </>
-  )
+  return null
 }
 
-export default UserOrLogin
+export default NoUser

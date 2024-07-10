@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Note = () => {
   return (
@@ -46,9 +47,9 @@ const Note = () => {
             &copy; {new Date().getFullYear()} FX Mint. All rights reserved.
           </p>
           <p className="text-gray-400 text-sm mt-2">
-            <a href="#" className="text-gray-400 hover:text-white">
+            <Link href="#" className="text-gray-400 hover:text-white">
               Privacy Policy
-            </a>
+            </Link>
           </p>
         </motion.div>
     </div>

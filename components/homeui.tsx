@@ -6,6 +6,7 @@ import Rating from './Rating'
 import Note from './note'
 import FAQ from './FAQ'
 import ForexBotFeatures from './ForexBotFeatures'
+import Link from 'next/link'
 
 const HomeUi = () => {
   return (
@@ -35,7 +36,7 @@ const HomeUi = () => {
     <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
       <img className="h-11" src="https://isren.org/storage/isren-network.png" alt="Your Company"/>
       <div className="mt-24 sm:mt-32 lg:mt-16">
-        <a href="#" className="inline-flex space-x-6">
+        <Link href="#" className="inline-flex space-x-6">
           <span className="rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-semibold leading-6 text-cyan-500 ring-1 ring-inset ring-indigo-500/20">What `&lsquo;`s new</span>
           <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-300">
             <span>About us</span>
@@ -43,13 +44,13 @@ const HomeUi = () => {
               <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
             </svg>
           </span>
-        </a>
+        </Link>
       </div>
       <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">YOUR GATEWAY TO THE WORLD OF KNOWLEDGE</h1>
       <p className="mt-6 text-lg leading-8 text-gray-300">Explore the depths of scientific and research work and stay informed of the latest developments in knowledge..</p>
       <div className="mt-10 flex items-center gap-x-6">
-        <a href="#" className="rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">Get started</a>
-        <a href="#" className="text-sm font-semibold leading-6 text-white">Learn more <span aria-hidden="true">→</span></a>
+        <Link href="#" className="rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">Get started</Link>
+        <Link href="#" className="text-sm font-semibold leading-6 text-white">Learn more <span aria-hidden="true">→</span></Link>
       </div>
     </div>
     <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
