@@ -31,7 +31,7 @@ const HomeUi = () => {
       <img className="h-11" src="https://isren.org/storage/isren-network.png" alt="Your Company"/>
       <div className="mt-24 sm:mt-32 lg:mt-16">
         <a href="#" className="inline-flex space-x-6">
-          <span className="rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-semibold leading-6 text-cyan-500 ring-1 ring-inset ring-indigo-500/20">What's new</span>
+          <span className="rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-semibold leading-6 text-cyan-500 ring-1 ring-inset ring-indigo-500/20">What `&lsquo;`s new</span>
           <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-300">
             <span>About us</span>
             <svg className="size-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
