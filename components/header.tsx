@@ -28,7 +28,7 @@ async function UserOrLogin() {
           <SidebarToggle />
         </>
       ) : (
-        <Link href="/dashboard" rel="nofollow">
+        <Link href="/dashboard">
           <img alt='forex bot' className='size-6 rounded-full mr-2' src="https://uoppdgbycojkpcadszya.supabase.co/storage/v1/object/public/documents/forex_bot.jpg"/>
           <img alt='forex bot' className='size-6 rounded-full mr-2 dark:block' src="https://uoppdgbycojkpcadszya.supabase.co/storage/v1/object/public/documents/forex_bot.jpg" />
         </Link>
@@ -51,9 +51,9 @@ export function Header() {
       </div>
       <div className="flex items-center justify-end space-x-2">
         <Link
-          target="_blank"
+         
           href="https://github.com/vercel/nextjs-ai-chatbot/"
-          rel="noopener noreferrer"
+        
           className={cn(buttonVariants({ variant: 'outline' }))}
         >
          <IconGitHub />
@@ -61,7 +61,7 @@ export function Header() {
         </Link>
         <Link
           href="https://vercel.com/templates/Next.js/nextjs-ai-chatbot"
-          target="_blank"
+  
           className={cn(buttonVariants())}
         >
           <IconVercel className="mr-2" />
