@@ -5,6 +5,7 @@ import Testimonial from './testimonial'
 import Rating from './Rating'
 import Note from './note'
 import FAQ from './FAQ'
+import ForexBotFeatures from './ForexBotFeatures'
 
 const HomeUi = () => {
   return (
@@ -60,6 +61,7 @@ const HomeUi = () => {
   <Rating />
 <Carousel />
 <Statistics />
+<ForexBotFeatures />
 <Testimonial />
 <FAQ />
 <Note />
