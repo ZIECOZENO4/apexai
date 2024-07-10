@@ -4,7 +4,7 @@ import Link from 'next/link';
 const BottomNavigation = () => {
   return (
     <motion.div
-      className="fixed bottom-4  md:hidden  transform -translate-x-1/2 inline-flex left-0 mx-auto justify-between bg-blue-600 w-11/12 rounded-3xl"
+      className="fixed bottom-4  md:hidden  -translate-x-1/2 inline-flex left-0 mx-auto justify-between bg-blue-600 w-11/12 rounded-3xl"
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 50 }}
@@ -12,10 +12,10 @@ const BottomNavigation = () => {
       <Link href="#">
         <a
           aria-current="page"
-          className="inline-flex flex-col items-center text-xs font-medium py-3 px-4 text-white flex-grow"
+          className="inline-flex flex-col items-center text-xs font-medium py-3 px-4 text-white grow"
         >
           <svg
-            className="w-7 h-7"
+            className="size-7"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -27,10 +27,10 @@ const BottomNavigation = () => {
       </Link>
       <Link href="#">
         <a
-          className="inline-flex flex-col items-center text-xs font-medium text-blue-400 py-3 px-4 flex-grow"
+          className="inline-flex flex-col items-center text-xs font-medium text-blue-400 py-3 px-4 grow"
         >
           <svg
-            className="w-7 h-7"
+            className="size-7"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -44,10 +44,10 @@ const BottomNavigation = () => {
           <span className="sr-only">Ai</span>
         </a>
       </Link>
-      <button className="relative inline-flex flex-col items-center text-xs font-medium text-white py-3 px-6 flex-grow">
+      <button className="relative inline-flex flex-col items-center text-xs font-medium text-white py-3 px-6 grow">
         <div className="absolute bottom-5 p-3 rounded-full border-4 border-white bg-blue-600">
           <svg
-            className="w-8 h-8"
+            className="size-8"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -63,10 +63,10 @@ const BottomNavigation = () => {
       </button>
       <Link href="#">
         <a
-          className="inline-flex flex-col items-center text-xs font-medium text-blue-400 py-3 px-4 flex-grow"
+          className="inline-flex flex-col items-center text-xs font-medium text-blue-400 py-3 px-4 grow"
         >
           <svg
-            className="w-7 h-7"
+            className="size-7"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -82,10 +82,10 @@ const BottomNavigation = () => {
       </Link>
       <Link href="#">
         <a
-          className="inline-flex flex-col items-center text-xs font-medium text-blue-400 py-3 px-4 flex-grow"
+          className="inline-flex flex-col items-center text-xs font-medium text-blue-400 py-3 px-4 grow"
         >
           <svg
-            className="w-7 h-7"
+            className="size-7"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"

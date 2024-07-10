@@ -1,11 +1,12 @@
 import React from 'react'
 import Carousel from './carousel'
+import Statistics from './statistics'
 
 const HomeUi = () => {
   return (
     <div>
         <div className="relative isolate overflow-hidden bg-gray-900">
-  <svg className="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
+  <svg className="absolute inset-0 -z-10 size-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
     <defs>
       <pattern id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
         <path d="M.5 200V.5H200" fill="none" />
@@ -26,14 +27,14 @@ const HomeUi = () => {
     </div>
   </div>
   <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
-    <div className="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
+    <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
       <img className="h-11" src="https://isren.org/storage/isren-network.png" alt="Your Company"/>
       <div className="mt-24 sm:mt-32 lg:mt-16">
         <a href="#" className="inline-flex space-x-6">
           <span className="rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-semibold leading-6 text-cyan-500 ring-1 ring-inset ring-indigo-500/20">What's new</span>
           <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-300">
             <span>About us</span>
-            <svg className="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <svg className="size-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
             </svg>
           </span>
@@ -53,6 +54,7 @@ const HomeUi = () => {
     </div>
   </div>
 <Carousel />
+<Statistics />
 </div>
     </div>
   )

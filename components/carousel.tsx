@@ -50,9 +50,9 @@ export default function Carousel() {
           {content.map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 mx-2 ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'} rounded-full md:mx-0 focus:outline-none`}
+              className={`size-3 mx-2 ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'} rounded-full md:mx-0 focus:outline-none`}
               onClick={() => setCurrentIndex(index)}
-            ></button>
+            >,</button>
           ))}
         </div>
 
@@ -80,9 +80,9 @@ export default function Carousel() {
           <div className="mt-6">
             <a
               href="#"
-              className="block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-md md:inline hover:bg-blue-400"
+              className="block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 bg-blue-500 rounded-md md:inline hover:bg-blue-400"
             >
-             Get started on Borex Bot
+             Get started on Forex Bot
             </a>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function Carousel() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.5 }}
-          className="object-cover w-full h-full max-w-2xl rounded-md"
+          className="object-cover size-full max-w-2xl rounded-md"
           alt="apple watch photo"
         />
       </div>
