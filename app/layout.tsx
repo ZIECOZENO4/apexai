@@ -13,10 +13,10 @@ export const metadata = {
     ? new URL(`https://${process.env.VERCEL_URL}`)
     : undefined,
   title: {
-    default: 'Next.js AI Chatbot',
-    template: `%s - Next.js AI Chatbot`
+    default: 'Forex Bot AI',
+    template: `%s - Forex AI Chatbot`
   },
-  description: 'An AI-powered chatbot template built with Next.js and Vercel.',
+  description: 'An AI-powered Forex Bot  built with Phython, Claude Opus and Open Ai.',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
