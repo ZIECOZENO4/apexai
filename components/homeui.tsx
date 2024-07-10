@@ -1,6 +1,10 @@
 import React from 'react'
 import Carousel from './carousel'
 import Statistics from './statistics'
+import Testimonial from './testimonial'
+import Rating from './Rating'
+import Note from './note'
+import FAQ from './FAQ'
 
 const HomeUi = () => {
   return (
@@ -53,8 +57,12 @@ const HomeUi = () => {
       </div>
     </div>
   </div>
+  <Rating />
 <Carousel />
 <Statistics />
+<Testimonial />
+<FAQ />
+<Note />
 </div>
     </div>
   )
