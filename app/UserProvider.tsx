@@ -19,7 +19,7 @@ const UserOrLogin: React.FC = () => {
       const sessionData = (await auth()) as Session
       setSession(sessionData)
       if (sessionData?.user) {
-        router.push('/')
+        router.push('/dashboard')
       } else {
         setLoading(false)
       }
@@ -34,7 +34,7 @@ const UserOrLogin: React.FC = () => {
   return (
     <>
       {session?.user ? (
-        <p><Loader /></p>
+      <Loader />
       ) : (
 <HomeUi />
       )}
