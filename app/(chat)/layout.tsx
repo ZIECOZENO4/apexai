@@ -10,7 +10,6 @@ export default async function ChatLayout({ children }: ChatLayoutProps) {
     <div className="relative flex h-[calc(100vh_-_theme(spacing.16))] overflow-hidden">
       <SidebarDesktop />
       {children}
- <BottomNavigation />
     </div>
   )
 }

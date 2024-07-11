@@ -12,12 +12,6 @@ export function EmptyScreen() {
      and leveraging the scalability of{' '}
   this open-source application is a testament to the fusion of cutting-edge technology and educational content.
         </p>
-        <p className="leading-normal text-muted-foreground">
-          At the heart of our AI chatbot lies the revolutionary{' '}
-      enabling dynamic interaction between textual guidance and intuitive UI elements. As you engage with the bot, it adapts to your learning pace, providing personalized advice, answering your queries, and offering comprehensive guides to navigate the complexities of forex trading. Our goal is to equip you with the confidence and foresight to make informed decisions, reduce errors, and ultimately master the art of forex trading.
-      <br />
-        enabling dynamic interaction between textual guidance and intuitive UI elements. As you engage with the bot, it adapts to your learning pace, providing personalized advice, answering your queries, and offering comprehensive guides to navigate the complexities of forex trading. Our goal is to equip you with the confidence and foresight to make informed decisions, reduce errors, and ultimately master the art of forex trading.
-        </p>
       </div>
     </div>
   )

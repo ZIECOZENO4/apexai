@@ -1,93 +1,129 @@
 "use client"
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-
+import { usePathname } from 'next/navigation';
 const BottomNavigation = () => {
+  const pathname = usePathname();
   return (
     <motion.div
-      className="fixed bottom-4  md:hidden  -translate-x-1/2 inline-flex left-0 justify-between bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 w-full mx-2 rounded-3xl"
+      className="fixed bottom-4  md:hidden  -translate-x-1/2 inline-flex left-0 justify-between bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 w-full px-4 rounded-3xl"
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 50 }}
     >
-      <Link href="#">
-        <a
-          aria-current="page"
-          className="inline-flex flex-col items-center text-xs font-medium py-3 px-4 text-white grow"
+      <Link href="/dashboard">
+        <div
+              aria-current={pathname === '/dashboard' ? 'page' : undefined}
+          className={`inline-flex flex-col items-center text-xs font-medium py-3 px-4 grow ${
+            pathname === '/dashboard' ? 'text-green-500' : 'text-blue-400'
+          }`}
+      
         >
-          <svg
-            className="size-7"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
-          </svg>
-          <span className="sr-only">Market</span>
-        </a>
-      </Link>
-      <Link href="#">
-        <a
-          className="inline-flex flex-col items-center text-xs font-medium text-blue-400 py-3 px-4 grow"
-        >
-          <svg
-            className="size-7"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-          <span className="sr-only">Ai</span>
-        </a>
-      </Link>
-      <button className="relative inline-flex flex-col items-center text-xs font-medium text-white py-3 px-6 grow">
-        <div className="absolute bottom-5 p-3 rounded-full border-4 border-white bg-blue-600">
-          <svg
-            className="size-8"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
+  <svg
+        fill={pathname === '/dashboard' ? '#00FF00' : '#ffffff'}
+    version="1.1"
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 32 32"
+    xmlSpace="preserve"
+    className="size-7 aligm-middle"
+  >
+    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+    <g id="SVGRepo_iconCarrier">
+      <path id="global--markets--bar_1_" d="M18.64,14.36h2.721v-3.72H18.64V14.36z M19.36,11.36h1.279v2.28H19.36V11.36z M22.64,14.36 h2.721V7.64H22.64V14.36z M23.36,8.36h1.279v5.28H23.36V8.36z M29.36,4.64h-2.72v9.72h2.721L29.36,4.64L29.36,4.64z M28.64,13.64 h-1.28V5.36h1.279L28.64,13.64L28.64,13.64z M31,15.64H16.36V8.36H21V7.64h-4.64V1.404c1.836,0.221,3.589,1.909,4.857,4.743 l0.656-0.294c-0.863-1.929-1.958-3.361-3.17-4.236c2.196,0.408,4.265,1.305,6.083,2.671l0.432-0.575 C22.544,1.703,19.356,0.64,16,0.64c-0.01,0-0.02,0.002-0.03,0.002c-0.005,0-0.01-0.002-0.015-0.002 c-0.016,0-0.031,0.004-0.047,0.005C7.481,0.695,0.64,7.561,0.64,16c0,0.199,0.161,0.36,0.36,0.36h14.64V30.6 c-1.855-0.198-3.627-1.894-4.906-4.755l-0.657,0.293c0.856,1.917,1.942,3.343,3.143,4.222c-3.147-0.61-6.041-2.231-8.197-4.673 l-0.54,0.477C7.399,29.466,11.597,31.36,16,31.36c8.47,0,15.36-6.891,15.36-15.36C31.36,15.801,31.199,15.64,31,15.64z M23.131,16.36c-0.032,2.665-0.413,5.149-1.052,7.28H16.36v-7.28H23.131z M16.36,24.36h5.493c-1.227,3.6-3.221,6.008-5.493,6.242 V24.36z M15.64,7.64h-5.538c1.235-3.624,3.248-6.041,5.538-6.248V7.64z M13.182,1.646C11.609,2.811,10.276,4.924,9.37,7.64H3.994 C6.128,4.586,9.396,2.389,13.182,1.646z M3.534,8.36h5.612c-0.636,2.155-1.01,4.634-1.042,7.28h-6.74 C1.429,12.974,2.223,10.492,3.534,8.36z M8.824,15.64c0.032-2.665,0.413-5.149,1.052-7.28h5.764v7.28 C15.64,15.64,8.824,15.64,8.824,15.64z M18.76,30.364c1.579-1.162,2.917-3.28,3.825-6.004h5.42 C25.861,27.43,22.57,29.633,18.76,30.364z M28.466,23.64h-5.657c0.636-2.155,1.01-4.634,1.042-7.28h6.785 C30.571,19.026,29.777,21.508,28.466,23.64z M14.36,24v-6c0-0.199-0.161-0.36-0.36-0.36H2c-0.199,0-0.36,0.161-0.36,0.36v6 c0,0.199,0.161,0.36,0.36,0.36h12C14.199,24.36,14.36,24.199,14.36,24z M11.677,23.64H4.323c-0.157-1.012-0.952-1.807-1.964-1.964 v-1.352c1.012-0.157,1.807-0.952,1.964-1.964h7.353c0.157,1.012,0.952,1.807,1.964,1.964v1.352 C12.629,21.833,11.833,22.628,11.677,23.64z M13.64,19.597c-0.615-0.139-1.099-0.622-1.237-1.237h1.237 C13.64,18.36,13.64,19.597,13.64,19.597z M3.597,18.36c-0.139,0.615-0.623,1.098-1.237,1.237V18.36H3.597z M2.36,22.403 c0.615,0.139,1.099,0.622,1.237,1.237H2.36V22.403z M12.403,23.64c0.139-0.615,0.623-1.098,1.237-1.237v1.237H12.403z M8,19.64 c-0.75,0-1.36,0.61-1.36,1.36S7.25,22.36,8,22.36S9.36,21.75,9.36,21S8.75,19.64,8,19.64z M8,21.64c-0.353,0-0.64-0.287-0.64-0.64 S7.647,20.36,8,20.36c0.353,0,0.64,0.287,0.64,0.64S8.353,21.64,8,21.64z M4,20.64h1v0.721H4V20.64z M11,20.64h1v0.721h-1V20.64z"></path>
+      <rect id="_Transparent_Rectangle" style={{ fill: 'none' }} width="32" height="32"></rect>
+    </g>
+  </svg>
+          <span className="sr-only">Forex</span>
         </div>
-        <span className="sr-only">bot</span>
-      </button>
-      <Link href="#">
-        <a
-          className="inline-flex flex-col items-center text-xs font-medium text-blue-400 py-3 px-4 grow"
-        >
-          <svg
-            className="size-7"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-          <span className="sr-only">News</span>
-        </a>
       </Link>
-      <Link href="#">
-        <a
-          className="inline-flex flex-col items-center text-xs font-medium text-blue-400 py-3 px-4 grow"
+      <Link href="/">
+        <div
+           aria-current={pathname === '/' ? 'page' : undefined}
+           className={`inline-flex flex-col items-center text-xs font-medium py-3 px-4 grow ${
+             pathname === '/' ? 'text-green-500' : 'text-blue-400'
+           }`}
+        >
+<svg     
+className="size-7" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"   xmlnsXlink="http://www.w3.org/1999/xlink"        fill={pathname === '/' ? '#00FF00' : '#ffffff'}><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>ai</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="icon" fill="#fdfcfc" transform="translate(64.000000, 64.000000)"> <path d="M320,64 L320,320 L64,320 L64,64 L320,64 Z M171.749388,128 L146.817842,128 L99.4840387,256 L121.976629,256 L130.913039,230.977 L187.575039,230.977 L196.319607,256 L220.167172,256 L171.749388,128 Z M260.093778,128 L237.691519,128 L237.691519,256 L260.093778,256 L260.093778,128 Z M159.094727,149.47526 L181.409039,213.333 L137.135039,213.333 L159.094727,149.47526 Z M341.333333,256 L384,256 L384,298.666667 L341.333333,298.666667 L341.333333,256 Z M85.3333333,341.333333 L128,341.333333 L128,384 L85.3333333,384 L85.3333333,341.333333 Z M170.666667,341.333333 L213.333333,341.333333 L213.333333,384 L170.666667,384 L170.666667,341.333333 Z M85.3333333,0 L128,0 L128,42.6666667 L85.3333333,42.6666667 L85.3333333,0 Z M256,341.333333 L298.666667,341.333333 L298.666667,384 L256,384 L256,341.333333 Z M170.666667,0 L213.333333,0 L213.333333,42.6666667 L170.666667,42.6666667 L170.666667,0 Z M256,0 L298.666667,0 L298.666667,42.6666667 L256,42.6666667 L256,0 Z M341.333333,170.666667 L384,170.666667 L384,213.333333 L341.333333,213.333333 L341.333333,170.666667 Z M0,256 L42.6666667,256 L42.6666667,298.666667 L0,298.666667 L0,256 Z M341.333333,85.3333333 L384,85.3333333 L384,128 L341.333333,128 L341.333333,85.3333333 Z M0,170.666667 L42.6666667,170.666667 L42.6666667,213.333333 L0,213.333333 L0,170.666667 Z M0,85.3333333 L42.6666667,85.3333333 L42.6666667,128 L0,128 L0,85.3333333 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+          <span className="sr-only">Ai</span>
+        </div>
+      </Link>
+<style jsx>{`
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .bounce-animation {
+    animation: bounce 2s infinite;
+  }
+
+  .gradient-border {
+    border: 4px solid;
+    border-image: linear-gradient(45deg, #ff6b6b, #f06595, #a5a6f6, #6bffb2) 1;
+    border-radius: 50%;
+  }
+`}</style>
+
+<button className="relative inline-flex flex-col items-center text-xs font-medium text-white py-3 px-6 grow shadow-2xl bounce-animation rounded-full">
+  <div className="absolute bottom-5 p-3 rounded-full border-4 bg-blue-600  border-gradient-to-br from-red-500 via-pink-500 to-green-500 border-solid shadow-2xl">
+    <svg className="size-8" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#ffffff">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <g id="SVGRepo_iconCarrier">
+        <title>ic_fluent_bot_24_filled</title>
+        <desc>Created with Sketch.</desc>
+        <g id="🔍-Product-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="ic_fluent_bot_24_filled" fill="#fcfcfc" fill-rule="nonzero">
+            <path d="M17.7530511,13.999921 C18.9956918,13.999921 20.0030511,15.0072804 20.0030511,16.249921 L20.0030511,17.1550008 C20.0030511,18.2486786 19.5255957,19.2878579 18.6957793,20.0002733 C17.1303315,21.344244 14.8899962,22.0010712 12,22.0010712 C9.11050247,22.0010712 6.87168436,21.3444691 5.30881727,20.0007885 C4.48019625,19.2883988 4.00354153,18.2500002 4.00354153,17.1572408 L4.00354153,16.249921 C4.00354153,15.0072804 5.01090084,13.999921 6.25354153,13.999921 L17.7530511,13.999921 Z M11.8985607,2.00734093 L12.0003312,2.00049432 C12.380027,2.00049432 12.6938222,2.2826482 12.7434846,2.64872376 L12.7503312,2.75049432 L12.7495415,3.49949432 L16.25,3.5 C17.4926407,3.5 18.5,4.50735931 18.5,5.75 L18.5,10.254591 C18.5,11.4972317 17.4926407,12.504591 16.25,12.504591 L7.75,12.504591 C6.50735931,12.504591 5.5,11.4972317 5.5,10.254591 L5.5,5.75 C5.5,4.50735931 6.50735931,3.5 7.75,3.5 L11.2495415,3.49949432 L11.2503312,2.75049432 C11.2503312,2.37079855 11.5324851,2.05700336 11.8985607,2.00734093 L12.0003312,2.00049432 L11.8985607,2.00734093 Z M9.74928905,6.5 C9.05932576,6.5 8.5,7.05932576 8.5,7.74928905 C8.5,8.43925235 9.05932576,8.99857811 9.74928905,8.99857811 C10.4392523,8.99857811 10.9985781,8.43925235 10.9985781,7.74928905 C10.9985781,7.05932576 10.4392523,6.5 9.74928905,6.5 Z M14.2420255,6.5 C13.5520622,6.5 12.9927364,7.05932576 12.9927364,7.74928905 C12.9927364,8.43925235 13.5520622,8.99857811 14.2420255,8.99857811 C14.9319888,8.99857811 15.4913145,8.43925235 15.4913145,7.74928905 C15.4913145,7.05932576 14.9319888,6.5 14.2420255,6.5 Z" id="🎨-Color"></path>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <span className="sr-only">Bot</span>
+</button>
+
+      <Link href="/dashboard/news">
+        <div
+             aria-current={pathname === '/dashboard/news' ? 'page' : undefined}
+             className={`inline-flex flex-col items-center text-xs font-medium py-3 px-4 grow ${
+               pathname === '/dashboard/news' ? 'text-green-500' : 'text-blue-400'
+             }`}
+        >
+      <svg
+    viewBox="0 0 1024 1024"
+    fill={pathname === '/dashboard/news' ? '#00FF00' : '#ffffff'}
+    className="size-8"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+    <g id="SVGRepo_iconCarrier">
+      <path d="M344.854 687.167c26.725 56.8 66.665 111.099 118.91 161.654-109.515-16.445-200.574-83.285-250.026-175.73l131.114 14.076zM461.776 177.924c-106.691 16.718-195.535 81.185-245.233 170.432l128.342-12.64c26.395-55.654 65.729-108.624 116.89-157.793zM502.016 337.406l1.78-163.191h-0.362c-57.402 50.103-101.083 104.341-130.194 161.745l128.774 1.45zM224.829 388.081l-23.709-0.211-23.439-0.304-1.84 169.497-94.898-170.523-52.909-0.575-2.593 241.198 23.589 0.331 23.468 0.211 1.871-173.871 97.645 174.957 50.256 0.575 2.564-241.289zM450.373 433.36l0.211-21.506 0.271-21.357-177.611-1.9-2.593 241.289 183.132 1.93 0.241-21.446 0.211-21.387-132.697-1.418 0.663-62.954 117.977 1.266 0.211-20.694 0.211-20.814-117.977-1.238 0.575-51.161 127.175 1.387zM691.15 568.256l-33.060-175.501-53.664-0.635-36.349 176.255-38.43-177.009-52.397-0.603 64.553 242.012 23.922 0.241 23.981 0.304 39.907-189.616 36.711 190.401 24.071 0.331 23.889 0.241 69.742-240.566-50.949-0.544-41.929 174.687zM529.708 174.514h-0.362l-1.748 163.162 128.866 1.359c-27.932-58.038-70.404-113.18-126.754-164.521zM804.932 340.603c-53.633-89.519-145.152-151.602-251.828-164.202 68.335 52.922 106.493 106.707 131.741 162.933l120.086 1.266zM554.925 849.786c109.455-14.028 201.386-78.448 252.927-168.876l-130.547 9.845c-27.963 56.197-69.108 109.589-122.378 159.03zM648.738 690.455l-124.914-1.359-1.69 155.833c54.961-47.872 97.462-99.846 126.602-154.475zM981.396 521.109c-11.763-10.407-35.052-19.757-70.074-27.873-24.132-5.791-39.907-10.528-47.267-14.629-7.513-3.953-11.283-9.593-11.191-16.861 0.061-9.923 3.771-17.979 11.101-23.5 7.209-5.34 17.283-8.084 30.044-7.904 14.781 0.121 26.725 3.682 35.867 10.407 9.079 6.788 13.998 15.867 14.721 27.391l49.077 0.603c-1.569-24.282-10.769-43.469-27.6-57.887-16.741-14.419-38.703-21.748-65.729-22.02-28.837-0.331-51.852 6.335-68.956 19.728-17.073 13.546-25.73 32.246-25.973 55.535-0.211 20.905 6.004 36.349 18.642 46.393 12.819 9.984 38.338 19.517 76.469 28.415 20.753 4.827 34.238 9.562 40.572 13.786 6.395 4.346 9.593 10.979 9.502 20.151-0.09 9.199-4.705 16.259-13.786 21.387-9.109 5.068-21.628 7.54-37.766 7.359-15.596-0.181-27.813-3.71-36.439-10.738-8.746-6.91-13.212-16.711-13.634-29.652l-48.534-0.512c0.875 26.063 9.895 46.213 26.908 60.511 17.043 14.419 40.844 21.689 71.278 21.989 30.495 0.304 54.598-5.942 72.578-19.154 18.038-13.151 27.088-30.979 27.328-53.664 0.362-22.503-5.429-38.974-17.134-49.26zM496.586 844.508l1.69-155.651-124.914-1.359c28.053 55.201 69.348 108.05 123.223 157.009z"></path>
+    </g>
+  </svg>
+          <span className="sr-only">News</span>
+        </div>
+      </Link>
+      <Link href="/dashboard/profile">
+        <div
+                aria-current={pathname === '/dashboard/profile' ? 'page' : undefined}
+                className={`inline-flex flex-col items-center text-xs font-medium py-3 px-4 grow ${
+                  pathname === '/dashboard/profile' ? 'text-green-500' : 'text-blue-400'
+                }`}
         >
           <svg
             className="size-7"
-            fill="currentColor"
+            fill={pathname === '/dashboard/profile' ? '#00FF00' : '#ffffff'}
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -98,7 +134,7 @@ const BottomNavigation = () => {
             ></path>
           </svg>
           <span className="sr-only">Account</span>
-        </a>
+        </div>
       </Link>
     </motion.div>
   );
