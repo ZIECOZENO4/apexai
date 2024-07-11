@@ -119,6 +119,7 @@ const Rate3 = () => {
       "colorTheme": "dark",
       "locale": "en",
       "autosize": true,
+      "width": "100%"
     });
 
     const widgetContainer = document.querySelector('.tradingview-widget-container__widget5');
