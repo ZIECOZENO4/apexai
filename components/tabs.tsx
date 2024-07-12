@@ -10,7 +10,7 @@ export default function NewsTabs() {
         <Tab key="photos" title="Photos">
           <Card>
             <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        forex
             </CardBody>
           </Card>  
         </Tab>
@@ -18,6 +18,13 @@ export default function NewsTabs() {
           <Card>
             <CardBody>
          <TopStories />
+            </CardBody>
+          </Card>  
+        </Tab>
+        <Tab key="videos" title="Videos">
+          <Card>
+            <CardBody>
+            <EconomicCalendar />
             </CardBody>
           </Card>  
         </Tab>

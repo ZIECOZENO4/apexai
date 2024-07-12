@@ -1,3 +1,4 @@
+'use server'
 import { type Session } from '@/lib/types'
 
 import { Button } from '@/components/ui/button'
