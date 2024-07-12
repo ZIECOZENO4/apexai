@@ -4,7 +4,7 @@ const Rating = () => {
   return (
     <div>
 <div
-	className=" flex-col space-y-4 min-w-screen h-screen animated fadeIn faster  fixed  left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-gray-900">
+	className=" flex-col space-y-4  animated fadeIn faster flex justify-center items-center outline-none focus:outline-none bg-gray-900">
 <div className="sm:flex  sm:items-center mt-3 w-1/2 border rounded-lg p-3 bg-white shadow m-48">
 	<div className="text-lg text-center font-semibold w-52 flex justify-center items-center">
 

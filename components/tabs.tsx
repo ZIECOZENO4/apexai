@@ -2,6 +2,7 @@ import React from "react";
 import {Tabs, Tab, Card, CardBody, CardHeader} from "@nextui-org/react";
 import EconomicCalendar from "./Calendar";
 import TopStories from "./TopStories";
+import ForexMatrix from "./ForexMatrix";
 
 export default function NewsTabs() {
   return (
@@ -31,7 +32,7 @@ export default function NewsTabs() {
         <Tab key="videos" title="Videos">
           <Card>
             <CardBody>
-            <EconomicCalendar />
+            <ForexMatrix />
             </CardBody>
           </Card>  
         </Tab>
