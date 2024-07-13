@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import { handleSignOut } from './signOutAction'  // Import the server action
+import { handleSignOut } from './signOutAction'
 
 export interface UserMenuProps {
   user: Session['user']
