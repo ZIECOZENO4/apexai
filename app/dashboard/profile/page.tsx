@@ -1,25 +1,25 @@
-"use client"
+"use client";
 
-import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { type Session } from '@/lib/types'
-import { Button } from '@/components/ui/button'
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { type Session } from '@/lib/types';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
-import { handleSignOut } from './signOutAction'
+} from '@/components/ui/dropdown-menu';
+import { handleSignOut } from './signOutAction';
 
 export interface UserMenuProps {
-  user: Session['user']
+  user: Session['user'];
 }
 
 function getUserInitials(name: string) {
-  const [firstName, lastName] = name.split(' ')
-  return lastName ? `${firstName[0]}${lastName[0]}` : firstName.slice(0, 2)
+  const [firstName, lastName] = name.split(' ');
+  return lastName ? `${firstName[0]}${lastName[0]}` : firstName.slice(0, 2);
 }
 
 function getUserName(email: string) {
@@ -27,7 +27,7 @@ function getUserName(email: string) {
   return namePart.charAt(0).toUpperCase() + namePart.slice(1);
 }
 
-export function UserMenu({ user }: UserMenuProps) {
+function UserMenu({ user }: UserMenuProps) {
   return (
     <div className="flex items-center justify-between">
       <DropdownMenu>
@@ -49,7 +49,7 @@ export function UserMenu({ user }: UserMenuProps) {
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
-  )
+  );
 }
 
 const UserProfile = ({ user }: UserMenuProps) => {
@@ -135,7 +135,7 @@ const UserProfile = ({ user }: UserMenuProps) => {
         </div>
       </div>
     </motion.div>
-  )
+  );
 }
 
-export default UserProfile
+export default UserProfile;
