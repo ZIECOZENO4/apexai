@@ -35,8 +35,8 @@ const TopStories = () => {
   }, []);
 
   return (
-      <div className="tradingview-widget-container1">
-        <div className="tradingview-widget-container__widget12"></div>
+      <div className="tradingview-widget-container1 w-[100vw] m-0">
+        <div className="tradingview-widget-container__widget12 m-0 align-middle items-start"></div>
         <div className="tradingview-widget-copyright123"></div>
       </div>
   );

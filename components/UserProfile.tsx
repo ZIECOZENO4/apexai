@@ -11,7 +11,7 @@ const UserProfile = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="bg-white rounded overflow-hidden shadow-lg">
+      <div className="bg-white rounded overflow-hidden shadow-lg align-middle w-[100vw]">
         <div className="text-center p-6 bg-gray-800 border-b">
           <svg
             aria-hidden="true"

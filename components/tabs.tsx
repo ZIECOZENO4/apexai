@@ -7,8 +7,8 @@ import ForexMatrix from "./ForexMatrix";
 
 export default function NewsTabs() {
   return (
-    <div className="flex w-full flex-col align-middle items-center ">
-      <Tabs  aria-label="Disabled Options" color="primary" className="align-middle items-center mt-0 overflow-x-auto" radius="full">
+    <div className="flex w-full flex-col align-middle items-center m-0">
+      <Tabs  aria-label="Disabled Options" color="primary" className="align-middle items-center mt-3 p-0 m-0 overflow-x-auto" radius="full">
         <Tab key="forex" title="Forex">
           <Card>
             <CardBody>
@@ -16,10 +16,13 @@ export default function NewsTabs() {
             </CardBody>
           </Card>  
         </Tab>
-        <Tab key="top stories" title="Top Stories">
+        <Tab key="top stories" title="Top Stories" className="w-[100vw] m-0 align-middle items-center">
           <Card>
             <CardBody>
-         <TopStories />
+              <div className="w-[100vw] m-0 align-middle items-start">
+              <TopStories />
+              </div>
+       
             </CardBody>
           </Card>  
         </Tab>
