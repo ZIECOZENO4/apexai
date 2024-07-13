@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import {Tabs, Tab, Card, CardBody, CardHeader} from "@nextui-org/react";
 import EconomicCalendar from "./Calendar";
@@ -8,7 +9,7 @@ export default function NewsTabs() {
   return (
     <div className="flex w-full flex-col align-middle">
       <Tabs disabledKeys={["music"]} aria-label="Disabled Options" color="primary" radius="full">
-        <Tab key="photos" title="Photos">
+        <Tab key="forex" title="Forex">
           <Card>
             <CardBody>
         forex
