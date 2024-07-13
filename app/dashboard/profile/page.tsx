@@ -136,6 +136,6 @@ const UserProfile = ({ user }: UserMenuProps) => {
       </div>
     </motion.div>
   );
-}
+};
 
 export default UserProfile;
