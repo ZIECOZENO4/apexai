@@ -30,7 +30,7 @@ const UserSessionInfo: React.FC = () => {
       {isRootPage && session?.user ? (
         <>
           <SidebarMobile>
-            <ChatHistory userId={session.user.id} />
+            <ChatHistory userId={session.user.id} /> 
           </SidebarMobile>
           <SidebarToggle />
         </>
