@@ -38,7 +38,7 @@ const ForexMatrix = () => {
   }, []);
 
   return (
-    <div className="tradingview-widget-container3 my-8 w-[100vw] ">
+    <div className="tradingview-widget-container3 w-[100vw] ">
       <div className="tradingview-widget-container__widget3"></div>
       <div className="tradingview-widget-copyright3">
       </div>

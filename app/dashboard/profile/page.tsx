@@ -3,7 +3,7 @@ import React from 'react'
 
 const ProfilePage = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center align-middle">
       <UserProfile />
     </div>
   )

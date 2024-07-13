@@ -1,14 +1,12 @@
 "use client"
 
-// components/UserProfile.tsx
-
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 const UserProfile = () => {
   return (
     <motion.div
-      className="mx-auto right-0 mt-2 w-60"
+      className="mx-auto align-middle mt-2 md:w-60 w-full"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -32,17 +30,18 @@ const UserProfile = () => {
           <p className="pt-2 text-lg font-semibold text-gray-50">John Doe</p>
           <p className="text-sm text-gray-100">John@Doe.com</p>
           <div className="mt-5">
-            <a
-              className="border rounded-full py-2 px-4 text-xs font-semibold text-gray-100"
-              href="#"
-            >
-              Manage your Account
-            </a>
+       
+         <button className="p-[3px] relative">
+         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+         <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+           Edit your account
+         </div>
+       </button>
           </div>
         </div>
         <div className="border-b">
           <Link href="/account/campaigns" passHref>
-            <a className="px-4 py-2 hover:bg-gray-100 flex">
+            <div className="px-4 py-2 hover:bg-gray-100 flex">
               <div className="text-green-600">
                 <svg
                   fill="none"
@@ -62,10 +61,10 @@ const UserProfile = () => {
                 </p>
                 <p className="text-xs text-gray-500">View your campaigns</p>
               </div>
-            </a>
+            </div>
           </Link>
           <Link href="/account/donations" passHref>
-            <a className="px-4 py-2 hover:bg-gray-100 flex">
+            <div className="px-4 py-2 hover:bg-gray-100 flex">
               <div className="text-gray-800">
                 <svg
                   fill="none"
@@ -85,7 +84,7 @@ const UserProfile = () => {
                 </p>
                 <p className="text-xs text-gray-500">View your last donations</p>
               </div>
-            </a>
+            </div>
           </Link>
         </div>
         <div className="">
