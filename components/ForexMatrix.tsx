@@ -9,6 +9,7 @@ const ForexMatrix = () => {
     script.async = true;
     script.innerHTML = JSON.stringify({
         "autosize": true,
+        "width": "100%",
         "height": "1000",
       "currencies": [
         "EUR",

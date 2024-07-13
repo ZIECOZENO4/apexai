@@ -12,7 +12,7 @@ const EconomicCalendar: React.FC = () => {
     script.src = 'https://www.tradays.com/c/js/widgets/calendar/widget.js?v=13';
     script.innerHTML = JSON.stringify({
       width: "100%",
-      height: "100%",
+      height: "1300",
       mode: "2",
       theme: 1
     });

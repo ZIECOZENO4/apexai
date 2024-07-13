@@ -1,46 +1,51 @@
-"use client"
+"use client";
 import React from "react";
-import {Tabs, Tab, Card, CardBody, CardHeader} from "@nextui-org/react";
+import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 import EconomicCalendar from "./Calendar";
 import TopStories from "./TopStories";
 import ForexMatrix from "./ForexMatrix";
+import FXSWidget from "./FXSWidget";
 
 export default function NewsTabs() {
   return (
-    <div className="flex w-full flex-col align-middle items-center m-0">
-      <Tabs  aria-label="Disabled Options" color="primary" className="align-middle items-center mt-3 p-0 m-0 overflow-x-auto" radius="full">
-        <Tab key="forex" title="Forex">
-          <Card>
-            <CardBody>
-        forex
+    <div className="flex w-full flex-col items-center m-0">
+      <Tabs
+        aria-label="News Tabs"
+        color="primary"
+        className="w-full overflow-x-auto whitespace-nowrap scrollbar-hide my-3 p-0"
+        radius="full"
+      >
+        <Tab key="forex" title="Forex" className="w-full text-center">
+          <Card className="flex items-center justify-center min-h-screen w-full">
+            <CardBody className="flex items-center justify-center w-full">
+              <FXSWidget />
             </CardBody>
-          </Card>  
+          </Card>
         </Tab>
-        <Tab key="top stories" title="Top Stories" className="w-[100vw] m-0 align-middle items-center">
-          <Card>
-            <CardBody>
-              <div className="w-[100vw] m-0 align-middle items-start">
-              <TopStories />
+        <Tab key="top stories" title="Top Stories" className="w-full text-center">
+          <Card className="flex items-center justify-center min-h-screen w-full">
+            <CardBody className="flex items-center justify-center w-full">
+              <div className="w-full">
+                <TopStories />
               </div>
-       
             </CardBody>
-          </Card>  
+          </Card>
         </Tab>
-        <Tab key="economic calendar" title="Economic Calendar">
-          <Card>
-            <CardBody>
-            <EconomicCalendar />
+        <Tab key="economic calendar" title="Economic Calendar" className="w-full text-center">
+          <Card className="flex items-center justify-center min-h-screen w-full">
+            <CardBody className="flex items-center justify-center w-full">
+              <EconomicCalendar />
             </CardBody>
-          </Card>  
+          </Card>
         </Tab>
-        <Tab key="forex matrix" title="Forex Matrix">
-          <Card>
-            <CardBody>
-            <ForexMatrix />
+        <Tab key="forex matrix" title="Forex Matrix" className="w-full text-center">
+          <Card className="flex items-center justify-center min-h-screen w-full">
+            <CardBody className="flex items-center justify-center w-full">
+              <ForexMatrix />
             </CardBody>
-          </Card>  
+          </Card>
         </Tab>
       </Tabs>
-    </div>  
+    </div>
   );
 }
