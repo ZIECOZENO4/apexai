@@ -59,7 +59,7 @@ const ScrollableTabs = () => {
           {tabs.map((tab) => (
             <motion.div
               key={tab.id}
-              className={`cursor-pointer py-2 ${activeTab === tab.id ? "border-b-2 border-green-500" : ""}`}
+              className={`cursor-pointer py-2 ${activeTab === tab.id ? "border-b-2 border rounded-full border-green-500" : ""}`}
               onClick={() => handleClick(tab.id)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -70,7 +70,7 @@ const ScrollableTabs = () => {
           ))}
         </div>
       </div>
-      <div className="space-y-32 p-8">
+      <div className="space-y-2 p-2">
         {tabs.map((tab, index) => (
           <div
             key={tab.id}
@@ -80,7 +80,7 @@ const ScrollableTabs = () => {
             }}
             className="min-h-screen"
           >
-            <h2 className="text-3xl font-bold mb-4">{tab.label}</h2>
+            <h2 className="text-xs font-bold mb-4">{tab.label}</h2>
             <tab.Component />
           </div>
         ))}
