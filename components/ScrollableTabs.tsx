@@ -24,17 +24,6 @@ const ScrollableTabs = () => {
   const [activeTab, setActiveTab] = useState<string>(tabs[0].id);
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  const handleScroll = () => {
-    sectionsRef.current.forEach((section, index) => {
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 100 && rect.bottom >= 100) {
-          setActiveTab(tabs[index].id);
-        }
-      }
-    });
-  };
-
   const handleClick = (id: string) => {
     scroller.scrollTo(id, {
       duration: 500,
@@ -45,13 +34,6 @@ const ScrollableTabs = () => {
     setActiveTab(id);
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <div className=" text-white min-h-screen w-screen align-middle items-center">
       <div className="overflow-x-auto bg-gray-900 p-2 ">
@@ -59,7 +41,7 @@ const ScrollableTabs = () => {
           {tabs.map((tab) => (
             <motion.div
               key={tab.id}
-              className={`cursor-pointer py-2 overflow-x-scroll ${activeTab === tab.id ? "border-b-2 rounded-full border-green-500 border-2" : ""}`}
+              className={`cursor-pointer py-2 flex overflow-x-scroll ${activeTab === tab.id ? "border-b-2 border-green-500 border-2" : ""}`}
               onClick={() => handleClick(tab.id)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

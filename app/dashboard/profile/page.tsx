@@ -1,18 +1,28 @@
-// app/dashboard/profile/page.tsx
+import React from 'react'
 
-import UserProfile from '@/components/UserProfile';
-import { FC } from 'react';
-
-interface User {
-  email: string;
+const ProfilePage = () => {
+  return (
+    <div>ProfilePage</div>
+  )
 }
 
-interface ProfilePageProps {
-  user: User;
-}
+export default ProfilePage
 
-const ProfilePage: FC<ProfilePageProps> = ({ user }) => {
-  return <UserProfile user={user} />;
-};
+// // app/dashboard/profile/page.tsx
 
-export default ProfilePage;
+// import UserProfile from '@/components/UserProfile';
+// import { FC } from 'react';
+
+// interface User {
+//   email: string;
+// }
+
+// interface ProfilePageProps {
+//   user: User;
+// }
+
+// const ProfilePage: FC<ProfilePageProps> = ({ user }) => {
+//   return <UserProfile user={user} />;
+// };
+
+// export default ProfilePage;
