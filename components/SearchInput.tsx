@@ -21,9 +21,9 @@ export function SearchInput() {
     console.log("submitted");
   };
   return (
-    <div className="h-[10rem] flex flex-col justify-center  items-center px-2">
+    <div className="h-[7rem] flex flex-col justify-center  w-full mx-2 items-center">
       <h2 className="my-2 text-xs text-center sm:text-5xl dark:text-white text-black">
-       Forex Bot AI: Ask anything
+       Forex AI Bot: Ask anything
       </h2>
       <PlaceholdersAndVanishInput
         placeholders={placeholders}
