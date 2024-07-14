@@ -35,13 +35,13 @@ const ScrollableTabs = () => {
   };
 
   return (
-    <div className=" text-white min-h-screen w-screen align-middle items-center">
-      <div className="overflow-x-auto bg-gray-900 p-2 ">
+    <div className=" text-white h-full w-screen align-middle items-center">
+      <div className=" flex overflow-x-scroll selection: bg-gray-900 m-2  whitespace-nowrap scrollbar-hide  ">
         <div className="flex space-x-4">
           {tabs.map((tab) => (
             <motion.div
               key={tab.id}
-              className={`cursor-pointer py-2 flex overflow-x-scroll ${activeTab === tab.id ? "border-b-2 border-green-500 border-2" : ""}`}
+              className={`cursor-pointer py-2 flex text-xs   ${activeTab === tab.id ? "border-b-2 border-green-500" : ""}`}
               onClick={() => handleClick(tab.id)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -52,7 +52,8 @@ const ScrollableTabs = () => {
           ))}
         </div>
       </div>
-      <div className="space-y-2 p-2">
+      <hr />
+      <div className="space-y-2 m-2 mx-4">
         {tabs.map((tab, index) => (
           <div
             key={tab.id}
@@ -62,8 +63,11 @@ const ScrollableTabs = () => {
             }}
             className="min-h-screen"
           >
-            <h2 className="text-xs font-bold mb-4">{tab.label}</h2>
+            <h2 className="text-xl font-mono font-bold mb-4">{tab.label}</h2>
+            <div className=" aligm-middle text-center justify-center mx-4">
             <tab.Component />
+            </div>
+          
           </div>
         ))}
       </div>
