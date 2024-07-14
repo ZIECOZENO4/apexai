@@ -10,13 +10,14 @@ import Component2 from "./Component2";
 import Component3 from "./Component3";
 import Component4 from "./Component4";
 import Component5 from "./Component5";
-
+import Component6 from "./Component6";
 const tabs = [
   { id: "section1", label: "Quick Insight", Component: Component1 },
   { id: "section2", label: "Currencies", Component: Component2 },
-  { id: "section3", label: "Up Comings", Component: Component3 },
-  { id: "section4", label: "Exchange", Component: Component4 },
-  { id: "section5", label: "Treading News", Component: Component5 },
+  { id: "section3", label: "Market", Component: Component6 },
+  { id: "section4", label: "Up Comings", Component: Component3 },
+  { id: "section5", label: "Exchange", Component: Component4 },
+  { id: "section6", label: "Treading News", Component: Component5 },
 ];
 
 const ScrollableTabs = () => {
