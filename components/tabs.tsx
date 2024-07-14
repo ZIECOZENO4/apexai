@@ -12,7 +12,7 @@ export default function NewsTabs() {
       <Tabs
         aria-label="News Tabs"
         color="primary"
-        className="w-full overflow-x-auto whitespace-nowrap scrollbar-hide my-3 p-0"
+        className="w-full overflow-x-scroll  whitespace-nowrap scrollbar-hide my-3 p-0"
         radius="full"
       >
         <Tab key="forex" title="Forex" className="w-full text-center">

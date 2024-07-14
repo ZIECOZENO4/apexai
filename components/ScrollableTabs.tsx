@@ -53,13 +53,13 @@ const ScrollableTabs = () => {
   }, []);
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
-      <div className="overflow-x-auto bg-gray-800 p-4">
+    <div className=" text-white min-h-screen w-screen align-middle items-center">
+      <div className="overflow-x-auto bg-gray-900 p-2 ">
         <div className="flex space-x-4">
           {tabs.map((tab) => (
             <motion.div
               key={tab.id}
-              className={`cursor-pointer py-2 ${activeTab === tab.id ? "border-b-2 border rounded-full border-green-500" : ""}`}
+              className={`cursor-pointer py-2 overflow-x-scroll ${activeTab === tab.id ? "border-b-2 rounded-full border-green-500 border-2" : ""}`}
               onClick={() => handleClick(tab.id)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
