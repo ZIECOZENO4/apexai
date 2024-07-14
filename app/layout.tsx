@@ -62,7 +62,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </div>
           <TailwindIndicator />
         </Providers>
-        <script src="https://widgets.fxstreet.com/"></script>
+        <script src="/script.js"></script> 
       </body>
     </html>
   )
