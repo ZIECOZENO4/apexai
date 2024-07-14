@@ -4,7 +4,7 @@ interface ChatLayoutProps {
   children: React.ReactNode
 }
 
-export default async function ChatL ayout({ children }: ChatLayoutProps) {
+export default async function ChatLayout({ children }: ChatLayoutProps) {
   return (
     <div className="relative flex flex-col w-[100vw]">
  {children}
