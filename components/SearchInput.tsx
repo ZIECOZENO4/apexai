@@ -21,7 +21,7 @@ export function SearchInput() {
     console.log("submitted");
   };
   return (
-    <div className="h-[7rem] flex flex-col justify-center  w-full px-2 my-4 items-center">
+    <div className="h-[7rem] flex flex-col justify-center  w-full m-2 items-center">
       <h2 className="my-2 text-xs text-center font-bold sm:text-5xl dark:text-white text-black">
        Forex AI Bot: Ask anything
       </h2>

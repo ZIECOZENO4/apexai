@@ -23,7 +23,7 @@ const  Component2 = () => {
         "USDHUF", "USDKRW", "USDCZK", "USDCLP", "USDARS", "USDVEF", "USDVND"
       ],
       width: '100%',
-      height: '100%',
+      height: '3000vh',
       period: 'D1',
       id: 'quotesWidgetOverview'
     });
@@ -33,7 +33,7 @@ const  Component2 = () => {
   return (
     <motion.div
       ref={widgetRef}
-      className="bg-gray-900 text-white p-4 rounded-lg shadow-lg"
+      className="bg-gray-900 text-white rounded-lg shadow-lg"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

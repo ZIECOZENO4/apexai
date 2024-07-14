@@ -1,36 +1,61 @@
+
 "use client"
-// components/  Component3.tsx
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+type ScreenerRow = {
+ SYMBOL: string;
+};
 
-const   Component3 = () => {
-  const widgetRef = useRef<HTMLDivElement>(null);
+declare global {
+  interface Window {
+    onTradingViewRowClick: (symbol: string) => void;
+  }
+}
+
+const Component3 = () => {
+  const router = useRouter();
+
+  const onTradingViewRowClick = (symbol: string) => {
+    router.push(`/dashboard/symbol/${symbol}`);
+ };
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://www.tradays.com/c/js/widgets/calendar/widget.js?v=13';
+    script.type = 'text/javascript';
+    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-screener.js';
     script.async = true;
-    script.dataset.type = 'calendar-widget';
-    script.textContent = JSON.stringify({
-      width: '100%',
-      height: '100%',
-      mode: '2'
+    script.innerHTML = JSON.stringify({
+      "autosize": true,
+      "height": "2500",
+      "defaultColumn": "overview",
+      "defaultScreen": "general",
+      "market": "forex",
+      "showToolbar": true,
+      "colorTheme": "dark",
+      "locale": "en",
+      "onRowClick": (row: ScreenerRow) => {
+        window.onTradingViewRowClick(row.SYMBOL);
+      }
     });
-    widgetRef.current?.appendChild(script);
+
+    const widgetContainer = document.querySelector('.tradingview-widget-container__widget');
+    if (widgetContainer) {
+      widgetContainer.appendChild(script);
+    }
+
+    return () => {
+      if (widgetContainer && script.parentNode === widgetContainer) {
+        widgetContainer.removeChild(script);
+      }
+    };
   }, []);
 
   return (
-    <motion.div
-      ref={widgetRef}
-      className="bg-gray-900 text-white p-4 rounded-lg shadow-lg"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div id="economicCalendarWidget"></div>
-    </motion.div>
+    <div className="tradingview-widget-container p-0 m-0">
+      <div className="tradingview-widget-container__widget m-0 p-0"></div>
+    </div>
   );
 };
 
-export default   Component3;
+export default Component3;

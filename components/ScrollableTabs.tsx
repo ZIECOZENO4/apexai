@@ -14,8 +14,8 @@ import Component6 from "./Component6";
 const tabs = [
   { id: "section1", label: "Quick Insight", Component: Component1 },
   { id: "section2", label: "Currencies", Component: Component2 },
-  { id: "section3", label: "Market", Component: Component6 },
-  { id: "section4", label: "Up Comings", Component: Component3 },
+  { id: "section3", label: "Market", Component: Component3 },
+  { id: "section4", label: "Up Comings", Component: Component6 },
   { id: "section5", label: "Exchange", Component: Component4 },
   { id: "section6", label: "Treading News", Component: Component5 },
 ];
@@ -63,8 +63,8 @@ const ScrollableTabs = () => {
             }}
             className="min-h-screen"
           >
-            <h2 className="text-xl font-mono font-bold mb-4">{tab.label}</h2>
-            <div className=" aligm-middle text-center justify-center mx-4">
+            <h2 className="text-xl font-mono font-bold mt-6 mb-2">{tab.label}</h2>
+            <div className=" aligm-middle text-center justify-center mr-2 mb-4">
             <tab.Component />
             </div>
           

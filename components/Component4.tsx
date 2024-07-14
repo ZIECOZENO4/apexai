@@ -18,7 +18,7 @@ const   Component4 = () => {
       details: true,
       extras: ["NGN", "USD", "GBP", "EUR", "JPY", "CHF", "CNH", "CAD", "NOK", "AUD", "SGD", "NZD", "SEK", "RUB", "ZAR", "MXN", "PLN", "HKD"],
       width: 580,
-      height: 340,
+      height: "100vh",
       id: 'quotesWidgetConverter'
     });
     widgetRef.current?.appendChild(script);
@@ -27,7 +27,7 @@ const   Component4 = () => {
   return (
     <motion.div
       ref={widgetRef}
-      className="bg-gray-900 text-white p-4 rounded-lg shadow-lg"
+      className="bg-gray-900 text-white  rounded-lg shadow-lg"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

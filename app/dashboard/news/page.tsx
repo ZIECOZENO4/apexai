@@ -4,7 +4,7 @@ import React from 'react'
 
 const NewsPage = () => {
   return (
-    <div className='flex flex-col aligm-middle'>
+    <div className='flex flex-col aligm-middle items-center p-0 m-0'>
       <Rate3 />
       <NewsTabs />
     </div>
