@@ -1,25 +1,21 @@
 "use client"
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { handleSignOut } from '@/app/dashboard/profile/signOutAction';
 
-import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { type Session } from '@/lib/types'
-import { Button } from '@/components/ui/button'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
-import { handleSignOut } from '../app/dashboard/profile/signOutAction'  // Import the server action
 
-export interface UserMenuProps {
-  user: Session['user']
+interface User {
+  email: string;
+}
+
+interface UserProfileProps {
+  user: User | null;
 }
 
 function getUserInitials(name: string) {
-  const [firstName, lastName] = name.split(' ')
-  return lastName ? `${firstName[0]}${lastName[0]}` : firstName.slice(0, 2)
+  const [firstName, lastName] = name.split(' ');
+  return lastName ? `${firstName[0]}${lastName[0]}` : firstName.slice(0, 2);
 }
 
 function getUserName(email: string) {
@@ -27,32 +23,11 @@ function getUserName(email: string) {
   return namePart.charAt(0).toUpperCase() + namePart.slice(1);
 }
 
-export function UserMenu({ user }: UserMenuProps) {
-  return (
-    <div className="flex items-center justify-between">
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="pl-0">
-            <span className="ml-2 hidden md:block">{user.email}</span>
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent sideOffset={8} align="start" className="w-fit">
-          <DropdownMenuItem className="flex-col items-start">
-            <div className="text-xs text-zinc-500">{user.email}</div>
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <form action={handleSignOut}>
-            <button className="relative flex w-full cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-xs outline-none transition-colors hover:bg-red-500 hover:text-white focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">
-              Sign Out
-            </button>
-          </form>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </div>
-  )
-}
+const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
+  if (!user) {
+    return <div>Loading...</div>;
+  }
 
-const UserProfile = ({ user }: UserMenuProps) => {
   return (
     <motion.div
       className="mx-auto align-middle mt-2 md:w-60 w-full"
@@ -63,9 +38,11 @@ const UserProfile = ({ user }: UserMenuProps) => {
       <div className="bg-white rounded overflow-hidden shadow-lg align-middle w-[100vw]">
         <div className="text-center p-6 bg-gray-800 border-b">
           <div className="flex size-7 shrink-0 select-none items-center justify-center h-24 w-24 rounded-full bg-muted/50 text-xs font-medium uppercase text-muted-foreground">
-            {getUserName(user.email)}
+            {getUserInitials(user.email)}
           </div>
-          <p className="pt-2 text-lg font-semibold text-gray-50"></p>
+          <p className="pt-2 text-lg font-semibold text-gray-50">
+            {getUserName(user.email)}
+          </p>
           <p className="text-sm text-gray-100">{user.email}</p>
           <div className="mt-5">
             <button className="p-[3px] relative">
@@ -100,7 +77,7 @@ const UserProfile = ({ user }: UserMenuProps) => {
               </div>
             </div>
           </Link>
-          <Link href="/account/donations" passHref>
+          <Link href="/account/donations">
             <div className="px-4 py-2 hover:bg-gray-100 flex">
               <div className="text-gray-800">
                 <svg
@@ -131,7 +108,7 @@ const UserProfile = ({ user }: UserMenuProps) => {
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default UserProfile
+export default UserProfile;
