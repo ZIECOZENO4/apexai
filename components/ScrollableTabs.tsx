@@ -1,4 +1,4 @@
-// components/ScrollableTabs.tsx
+
 
 "use client";
 

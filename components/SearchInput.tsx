@@ -7,10 +7,10 @@ import { PlaceholdersAndVanishInput } from "./ui/placeholders-and-vanish-input";
 export function SearchInput() {
   const placeholders = [
     "What's the current rate of Eur/Usd?",
-    "Who is Tyler Durden?",
-    "Where is Andrew Laeddis Hiding?",
-    "Write a Javascript method to reverse a string",
-    "How to assemble your own PC?",
+    "What is the current exchange rate?",
+    "How to use Forex Bot AI?",
+    "Getting started on forex bot analysis",
+    "Search for currency pairs",
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +21,7 @@ export function SearchInput() {
     console.log("submitted");
   };
   return (
-    <div className="h-[7rem] flex flex-col justify-center  w-full mx-2 items-center">
+    <div className="h-[7rem] flex flex-col justify-center  w-full px-2 my-4 items-center">
       <h2 className="my-2 text-xs text-center sm:text-5xl dark:text-white text-black">
        Forex AI Bot: Ask anything
       </h2>
