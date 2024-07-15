@@ -61,7 +61,7 @@ const ScrollableTabs = () => {
             ref={(el) => {
               sectionsRef.current[index] = el;
             }}
-            className="min-h-screen"
+            className="h-full"
           >
             <h2 className="text-xl font-mono font-bold mt-6 mb-2">{tab.label}</h2>
             <div className=" aligm-middle text-center justify-center mr-2 mb-8">

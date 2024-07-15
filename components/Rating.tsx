@@ -89,7 +89,7 @@ const Rating = () => {
 		</div>
 
 	</div>
-	<div className="flex justify-between align-middle gap-8 px-8">
+	<div className="flex justify-between align-middle gap-8 px-14">
 	<div className="text-lg text-center font-semibold w-52">
 		90%
 		<div className="flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true"
