@@ -18,7 +18,7 @@ const   Component4 = () => {
       details: true,
       extras: ["NGN", "USD", "GBP", "EUR", "JPY", "CHF", "CNH", "CAD", "NOK", "AUD", "SGD", "NZD", "SEK", "RUB", "ZAR", "MXN", "PLN", "HKD"],
       width: 580,
-      height: "100vh",
+      height: 500,
       id: 'quotesWidgetConverter'
     });
     widgetRef.current?.appendChild(script);
