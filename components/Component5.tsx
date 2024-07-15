@@ -22,7 +22,7 @@ const Component5 = () => {
       transition={{ duration: 0.5 }}
     >
       <div
-        className="fxs_news_widget h-[100vh]"
+        className="fxs_news_widget h-[200vh]"
         dangerouslySetInnerHTML={{
           __html: `<div fxs_widget="true" fxs_name="news" fxs_host="https://subscriptions.fxstreet.com/" fxs_feed="generalfeed" fxs_take="5" fxs_view="complete" fxs_free="true" fxs_title="Latest Forex News"></div>`
         }}

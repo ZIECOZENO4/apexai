@@ -195,7 +195,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
         </div>
       </div>
       <form action={handleSignOut} >
-          <button className="px-28 py-2 rounded-full bg-gradient-to-b from-red-500 to-red-600 text-white focus:ring-2 focus:ring-red-400 hover:shadow-xl transition duration-200 my-3 w-full mb-20">
+          <button className="px-28 py-2 rounded-full bg-gradient-to-b from-red-500 to-red-600 text-white focus:ring-2 focus:ring-red-400 hover:shadow-xl transition duration-200 my-3 w-full mb-32">
   Log Out
 </button>
           </form>

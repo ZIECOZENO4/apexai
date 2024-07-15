@@ -58,7 +58,7 @@ export async function Header() {
  
 
         {session?.user ? (
-          <div >
+          <div className="flex items-center justify-end space-x-4">
                  <div className="border border-blue-700 align-middle items-center shadow-xl rounded-md">
         <Link href="/dashboard">
         <svg
