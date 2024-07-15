@@ -1,10 +1,17 @@
 "use client"
 
-import { useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const DynamicPage: React.FC = () => {
-  const searchParams = useSearchParams();
-  const filter = searchParams.get('filter');
+  const router = useRouter();
+  const [filter, setFilter] = useState<string | null>(null);
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const filterParam = url.pathname.split('/').pop();
+    setFilter(filterParam || null);
+  }, [router]);
 
   return (
     <div>

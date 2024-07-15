@@ -82,14 +82,21 @@ const Component2: React.FC = () => {
   }, []);
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    console.log("Overlay clicked");
     const target = event.target as HTMLElement;
     const row = target.closest('tr');
     if (row) {
+      console.log("Row found");
       const cells = row.querySelectorAll('td');
       if (cells.length > 0) {
         const filter = cells[cells.length - 1].innerText;
+        console.log("Filter extracted:", filter);
         router.push(`/dynamic/${filter}`);
+      } else {
+        console.log("No cells found in row");
       }
+    } else {
+      console.log("No row found");
     }
   };
 
