@@ -12,8 +12,9 @@ const statistics = [
 
 const Statistics: React.FC = () => {
   return (
-    <div className="flex flex-col justify-center items-center h-auto pt-4">
-      <div className="min-w-[375px] md:min-w-[700px] xl:min-w-[800px] mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6">
+    <div className="flex flex-col justify-center items-center h-auto pt-10 px-8">
+      <div className="my-2 text-2xl font-bold text-blue-700 text-center font-serif">Forex Bot Statistics</div>
+      <div className="min-w-[300px] md:min-w-[700px] xl:min-w-[800px] mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6">
         {statistics.map((stat, index) => (
           <StatsCard key={index} title={stat.title} value={stat.value} icon={stat.icon} />
         ))}

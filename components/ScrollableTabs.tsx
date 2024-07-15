@@ -64,7 +64,7 @@ const ScrollableTabs = () => {
             className="min-h-screen"
           >
             <h2 className="text-xl font-mono font-bold mt-6 mb-2">{tab.label}</h2>
-            <div className=" aligm-middle text-center justify-center mr-2 mb-4">
+            <div className=" aligm-middle text-center justify-center mr-2 mb-8">
             <tab.Component />
             </div>
           
