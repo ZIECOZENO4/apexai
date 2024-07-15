@@ -71,10 +71,10 @@ className="size-7" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/
     border-radius: 50%;
   }
 `}</style>
-
-<button className="relative inline-flex flex-col items-center text-xs font-medium text-white py-3 px-6 grow shadow-2xl bounce-animation rounded-full">
-  <div className="absolute bottom-5 p-3 rounded-full border-4 bg-blue-600  border-gradient-to-br from-red-500 via-pink-500 to-green-500 border-solid shadow-2xl">
-    <svg className="size-8" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#ffffff">
+ 
+<Link href="/dashboard/bot" className="relative inline-flex flex-col items-center text-xs font-medium text-white py-3 px-6 grow shadow-2xl  rounded-full">
+  <div className="absolute bounce-animation bottom-5 p-3 rounded-full border-4 bg-blue-600  border-gradient-to-br from-red-500 via-pink-500 to-green-500 border-solid shadow-2xl">
+    <svg className="size-8" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"     fill={pathname === '/dashboard/bot' ? '#00FF00' : '#ffffff'}>
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
       <g id="SVGRepo_iconCarrier">
@@ -89,7 +89,7 @@ className="size-7" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/
     </svg>
   </div>
   <span className="sr-only">Bot</span>
-</button>
+</Link>
 
       <Link href="/dashboard/news">
         <div

@@ -17,7 +17,7 @@ const   Component4 = () => {
       datepicker: true,
       details: true,
       extras: ["NGN", "USD", "GBP", "EUR", "JPY", "CHF", "CNH", "CAD", "NOK", "AUD", "SGD", "NZD", "SEK", "RUB", "ZAR", "MXN", "PLN", "HKD"],
-      width: 580,
+      width: "100%",
       height: 500,
       id: 'quotesWidgetConverter'
     });
