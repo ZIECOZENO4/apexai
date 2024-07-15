@@ -34,10 +34,9 @@ const HomeUi = () => {
   </div>
   <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
     <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
-      <img className="h-11" src="https://isren.org/storage/isren-network.png" alt="Your Company"/>
-      <div className="mt-24 sm:mt-32 lg:mt-16">
+      <div className="mt-14 sm:mt-24 lg:mt-10">
         <Link href="#" className="inline-flex space-x-6">
-          <span className="rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-semibold leading-6 text-cyan-500 ring-1 ring-inset ring-indigo-500/20">What `&lsquo;`s new</span>
+          <span className="rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-semibold leading-6 text-cyan-500 ring-1 ring-inset ring-indigo-500/20">What &lsquo;s new</span>
           <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-300">
             <span>About us</span>
             <svg className="size-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -46,16 +45,16 @@ const HomeUi = () => {
           </span>
         </Link>
       </div>
-      <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">YOUR GATEWAY TO THE WORLD OF KNOWLEDGE</h1>
-      <p className="mt-6 text-lg leading-8 text-gray-300">Explore the depths of scientific and research work and stay informed of the latest developments in knowledge..</p>
+      <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">YOUR GATEWAY TO THE WORLD OF FOREX</h1>
+      <p className="mt-6 text-lg leading-8 text-gray-300">Dive into the world of forex with Forex Bot, giving you the market trend 90% accurate, using the most powerful AI tools, Forex History and Trends, explore the world of Forex with Forex Bot..</p>
       <div className="mt-10 flex items-center gap-x-6">
-        <Link href="#" className="rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">Get started</Link>
-        <Link href="#" className="text-sm font-semibold leading-6 text-white">Learn more <span aria-hidden="true">→</span></Link>
+        <Link href="/signup" className="rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">Get started</Link>
+        <Link href="/dashboard" className="text-sm font-semibold leading-6 text-white">Learn more <span aria-hidden="true">→</span></Link>
       </div>
     </div>
     <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
       <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-        <img src="https://spruko.com/demo/ren/demo/img/ltr-screens/screen2.jpg" alt="App screenshot" width="2432" height="1442" className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"/>
+        <img src="https://uoppdgbycojkpcadszya.supabase.co/storage/v1/object/public/documents/forex_bot.jpg" alt="App screenshot" width="2432" height="1442" className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"/>
       </div>
     </div>
   </div>

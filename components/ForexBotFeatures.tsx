@@ -14,7 +14,7 @@ const features = [
 
 const ForexBotFeatures = () => {
   return (
-    <div className="container mx-auto p-10 bg-gray-200">
+    <div className="container mx-auto p-10">
       <h2 className="text-3xl font-bold text-center mb-10">What Forex Bot Does</h2>
       <div className="relative wrap overflow-hidden h-full">
         <div className="border-2 absolute border-opacity-20 border-gray-700 h-full left-1/2"></div>

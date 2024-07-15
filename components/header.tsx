@@ -55,7 +55,11 @@ export async function Header() {
         </React.Suspense>
       </div>
       <div className="flex items-center justify-end space-x-4">
-      <div className="border border-blue-700 align-middle items-center shadow-xl rounded-md">
+ 
+
+        {session?.user ? (
+          <div >
+                 <div className="border border-blue-700 align-middle items-center shadow-xl rounded-md">
         <Link href="/dashboard">
         <svg
     viewBox="0 0 24 24"
@@ -81,10 +85,11 @@ export async function Header() {
         </Link>
    
 </div>
-
-        {session?.user ? (
-          <UserMenu user={session.user} />
+<UserMenu user={session.user} />
+          </div>
+         
         ) : (
+          
           <Link href="/signup">
              <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block">
           <span className="absolute inset-0 overflow-hidden rounded-full">

@@ -2,10 +2,10 @@ import React from 'react'
 
 const Rating = () => {
   return (
-    <div>
+    <div className=' align-middle items-center justify-center'>
 <div
-	className=" flex-col space-y-4  animated fadeIn faster flex justify-center items-center outline-none focus:outline-none bg-gray-900">
-<div className="sm:flex  sm:items-center mt-3 w-1/2 border rounded-lg p-3 bg-white shadow m-48">
+	className=" flex-col space-y-4 w-full align-middle  animated fadeIn faster flex justify-center items-center outline-none focus:outline-none">
+<div className="sm:flex  sm:items-center mt-3 w-1/2 border rounded-lg p-3  shadow">
 	<div className="text-lg text-center font-semibold w-52 flex justify-center items-center">
 
 		<svg viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg" height="36">
@@ -45,8 +45,7 @@ const Rating = () => {
 			</defs>
 		</svg>
 		<div>
-			Coup de cœur
-			voyageurs
+		Best Forex Analyser
 		</div>
 
 		<div>
@@ -90,8 +89,9 @@ const Rating = () => {
 		</div>
 
 	</div>
+	<div className="flex justify-between align-middle gap-8">
 	<div className="text-lg text-center font-semibold w-52">
-		4,88
+		90%
 		<div className="flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true"
 				role="presentation" focusable="false"
 				style={{ display: 'block', height: '10px', width: '10px', fill: 'currentcolor' }}>
@@ -121,16 +121,18 @@ const Rating = () => {
 			</svg></div>
 
 	</div>
-	<div className=" w-52">
+	<div className=" w-52 ">
 		<div className="text-lg text-center font-semibold">
-			51
+			100%
 
 		</div>
 		<div className="underline  text-center">
-			Commentaires
+		Trust
 		</div>
 
 	</div>
+	</div>
+	
 </div>
 
 </div>
