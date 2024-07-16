@@ -5,8 +5,6 @@ import TradingViewWidget from "./Chart";
 import Exchange from './Exchange';
 import FXPricingWidget from './Average';
 import TickerQuoteWidget from './TickerQuoteWidget';
-import PipCalculatorWidget from './PipCalculatorWidget';
-import FibonacciCalculatorWidget from './FibonacciCalculatorWidget';
 import ForexNewsWidget from './ForexNewsWidget';
 
 const DynamicPage: React.FC = () => {
@@ -30,8 +28,6 @@ const DynamicPage: React.FC = () => {
           <Exchange currency={currency} />
           <FXPricingWidget currencyPair={currency} />
           <TickerQuoteWidget currency={currency} />
-          <PipCalculatorWidget currencyPair={currency} />
-          <FibonacciCalculatorWidget />
           <ForexNewsWidget currency={currency} />
         </div>
       ) : (

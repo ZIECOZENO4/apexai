@@ -20,7 +20,7 @@ interface NewsArticle {
   post_time_utc: string;
 }
 
-const Component5: React.FC = () => {
+const TrendingForexNews: React.FC = () => {
   const [news, setNews] = useState<{ [key: string]: NewsArticle[] }>({});
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -88,4 +88,4 @@ const Component5: React.FC = () => {
   );
 };
 
-export default Component5;
+export default TrendingForexNews;

@@ -5,6 +5,7 @@ import EconomicCalendar from "./Calendar";
 import TopStories from "./TopStories";
 import ForexMatrix from "./ForexMatrix";
 import Component5 from "./Component5";
+import TrendingForexNews from "./Component5";
 
 export default function NewsTabs() {
   return (
@@ -18,7 +19,7 @@ export default function NewsTabs() {
         <Tab key="forex" title="Forex" className="w-full text-center">
           <Card className="flex items-center justify-center min-h-screen w-full">
             <CardBody className="flex items-center justify-center w-full">
-              <Component5 />
+              <TrendingForexNews />
             </CardBody>
           </Card>
         </Tab>
