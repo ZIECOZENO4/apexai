@@ -69,17 +69,17 @@ const BotList: React.FC = () => {
   }, [searchTerm]);
 
   const handleClick = (pair: string) => {
-    console.log(`Navigating to /dynamic/${pair}`);
+    console.log(`Navigating to /dashboard/analysis/${pair}`);
     router.push(`/dashboard/analysis/${pair}`);
   };
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl mb-4">Currency Pairs</h1>
+      <h1 className="text-xl font-bold font-serif text-center mb-4">Forex Bot: AI Analyser</h1>
       <input
         type="text"
         placeholder="Search currency pairs"
-        className="border p-2 mb-4 w-full"
+        className="border p-2 mb-4 w-full rounded-md"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
@@ -88,19 +88,19 @@ const BotList: React.FC = () => {
           {filteredPairs.map(({ pair, image, info }) => (
             <div
               key={pair}
-              className="border p-4 flex items-center cursor-pointer"
+              className="border p-2 flex items-center cursor-pointer"
               onClick={() => handleClick(pair)}
             >
-              <img src={image} alt={pair} className="w-10 h-10 mr-4" />
               <div>
-                <span className="block font-bold">{pair}</span>
+                <span className="block font-serif font-bold">{pair}</span>
                 <span className="block text-sm text-gray-500">{info}</span>
+                <span className="block text-xs text-blue-800 my-2 underline">Bot Analysis</span>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <p className="text-red-500">Currency pair not found</p>
+        <p className="text-red-500  align-middle">Currency pair not found</p>
       )}
     </div>
   );

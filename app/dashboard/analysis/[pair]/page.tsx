@@ -1,6 +1,12 @@
-"use client"
+"use client";
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import TradingViewWidget from "./Chart";
+import Exchange from './Exchange';
+import FXPricingWidget from './Average';
+import TickerQuoteWidget from './TickerQuoteWidget';
+import PipCalculatorWidget from './PipCalculatorWidget';
+import FibonacciCalculatorWidget from './FibonacciCalculatorWidget';
 
 const DynamicPage: React.FC = () => {
   const router = useRouter();
@@ -12,13 +18,22 @@ const DynamicPage: React.FC = () => {
     setPair(pairParam || null);
   }, [router]);
 
+  const symbol = pair ? `FX:${pair.toUpperCase()}` : '';
+  const currency = pair ? pair.toUpperCase() : '';
+
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl mb-4">Currency Pair Details</h1>
       {pair ? (
-        <p>The selected currency pair is: {pair}</p>
+        <div>
+          <TradingViewWidget symbol={symbol} />
+          <Exchange currency={currency} />
+          <FXPricingWidget currencyPair={currency} />
+          <TickerQuoteWidget currency={currency} />
+          <PipCalculatorWidget currencyPair={currency} />
+          <FibonacciCalculatorWidget />
+        </div>
       ) : (
-        <p>Currency pair not found.</p>
+        <p>Loading...</p>
       )}
     </div>
   );
