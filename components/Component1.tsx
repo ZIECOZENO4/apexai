@@ -62,7 +62,7 @@ Built on top Chat gbt 4.o  and Claude Opus
 Built on top Forex Api for first hand and correct information
       </h4>
 
-      <Link className="inline-block text-left underline" href="/dashboard/bot">
+      <Link className="inline-block text-left underline" href="/dashboard">
         <button
           className="flex select-none items-center text-left  gap-2 rounded-lg py-2 px-6  align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
@@ -105,7 +105,7 @@ Built on forex bot that analysis the market, the chart and the news and then cal
 
       <Link className="inline-block text-left underline" href="/dashboard/bot">
         <button
-          className="flex select-none items-center text-left  gap-2 rounded-lg py-2 px-6  align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          className="flex select-none items-center text-left  gap-2 rounded-lg py-2 px-3  align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
     BOT ANALYTICS

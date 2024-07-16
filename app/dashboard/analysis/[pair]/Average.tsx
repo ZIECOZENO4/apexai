@@ -17,10 +17,10 @@ const FXPricingWidget: React.FC<FXPricingWidgetProps> = ({ symbol}) => {
 
       // Create and configure the TradingView widget container
       const widgetContainer = document.createElement('div');
-      widgetContainer.className = 'tradingview-widget-container15';
+      widgetContainer.className = 'tradingview-widget-container5';
 
       const widgetSubContainer = document.createElement('div');
-      widgetSubContainer.className = 'tradingview-widget-container__widget15';
+      widgetSubContainer.className = 'tradingview-widget-container__widget5';
 
       widgetContainer.appendChild(widgetSubContainer);
 
@@ -33,7 +33,7 @@ const FXPricingWidget: React.FC<FXPricingWidgetProps> = ({ symbol}) => {
         interval: '1m',
         width: '100%',
         isTransparent: false,
-        height: '300vh',
+        height: '00vh',
         symbol: symbol,
         showIntervalTabs: true,
         displayMode: 'multiple',
@@ -45,7 +45,7 @@ const FXPricingWidget: React.FC<FXPricingWidgetProps> = ({ symbol}) => {
 
       // Create and configure the copyright element
       const copyright = document.createElement('div');
-      copyright.className = 'tradingview-widget-copyright15';
+      copyright.className = 'tradingview-widget-copyright5';
 
       widgetContainer.appendChild(copyright);
 
@@ -64,7 +64,7 @@ const FXPricingWidget: React.FC<FXPricingWidgetProps> = ({ symbol}) => {
   return (
     <div
       ref={widgetRef}
-      style={{ width: '100%', height: '300vh', border: '1px solid #eee' }}
+      style={{ width: '100%', height: '2200vh', border: '1px solid #eee' }}
     ></div>
   );
 };
