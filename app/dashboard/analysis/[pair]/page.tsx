@@ -24,10 +24,10 @@ const DynamicPage: React.FC = () => {
     <div className="container mx-auto mb-32 w-full mx-0 px-0">
       {pair ? (
         <div>
+          <TickerQuoteWidget symbol={symbol} />
           <TradingViewWidget symbol={symbol} />
+          <FXPricingWidget symbol={symbol} />
           <Exchange currency={currency} />
-          <FXPricingWidget currencyPair={currency} />
-          <TickerQuoteWidget currency={currency} />
           <ForexNewsWidget currency={currency} />
         </div>
       ) : (

@@ -38,9 +38,9 @@ const ForexNewsWidget: React.FC<ForexNewsWidgetProps> = ({ currency }) => {
         setNews(data.data.news);
       } catch (err) {
         if (err instanceof Error) {
-          setError(`Failed to fetch news: ${err.message}`);
+          setError(`No News for: ${currency}`);
         } else {
-          setError('Failed to fetch news: An unknown error occurred');
+          setError('No Available News');
         }
       } finally {
         setLoading(false);

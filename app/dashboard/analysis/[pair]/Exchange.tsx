@@ -31,7 +31,7 @@ const Exchange: React.FC<TradingViewWidgetProps> = ({ currency }) => {
   return (
     <motion.div
       ref={widgetRef}
-      className="bg-gray-900 text-white rounded-lg shadow-lg"
+      className="bg-gray-900 text-white rounded-lg shadow-lg mb-10"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

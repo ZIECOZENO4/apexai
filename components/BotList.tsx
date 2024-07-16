@@ -47,12 +47,6 @@ const currencyPairs = [
   { pair: "USDILS", image: "/images/USDILS.png", info: "US Dollar to Israeli Shekel" },
   { pair: "USDIDR", image: "/images/USDIDR.png", info: "US Dollar to Indonesian Rupiah" },
   { pair: "USDHUF", image: "/images/USDHUF.png", info: "US Dollar to Hungarian Forint" },
-  { pair: "USDKRW", image: "/images/USDKRW.png", info: "US Dollar to South Korean Won" },
-  { pair: "USDCZK", image: "/images/USDCZK.png", info: "US Dollar to Czech Koruna" },
-  { pair: "USDCLP", image: "/images/USDCLP.png", info: "US Dollar to Chilean Peso" },
-  { pair: "USDARS", image: "/images/USDARS.png", info: "US Dollar to Argentine Peso" },
-  { pair: "USDVEF", image: "/images/USDVEF.png", info: "US Dollar to Venezuelan Bolívar" },
-  { pair: "USDVND", image: "/images/USDVND.png", info: "US Dollar to Vietnamese Dong" },
 ];
 
 const BotList: React.FC = () => {

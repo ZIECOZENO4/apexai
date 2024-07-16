@@ -1,39 +1,71 @@
-"use client"
+// app/components/FXPricingWidget.tsx
+"use client";
+
 import React, { useEffect, useRef } from 'react';
 
 interface FXPricingWidgetProps {
-  currencyPair: string;
+  symbol: string;
 }
 
-const FXPricingWidget: React.FC<FXPricingWidgetProps> = ({ currencyPair }) => {
+const FXPricingWidget: React.FC<FXPricingWidgetProps> = ({ symbol}) => {
   const widgetRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (widgetRef.current) {
+      // Clear any existing content
       widgetRef.current.innerHTML = '';
-    }
 
-    const iframe = document.createElement('iframe');
-    iframe.src = `https://fxpricing.com/fx-widget/simple-moving-widget.php?id=1&symbol=${currencyPair}&fcs_link=hide&click_target=disable&theme=dark&tm-cr=212529&hr-cr=FFFFFF13&by-cr=28A745&sl-cr=DC3545&flags=circle&value_alignment=center&tab=5M,15M,30M,1H,4H,5H,1D,1W,M&lang=en&font=Arial, sans-serif`;
-    iframe.width = "100%";
-    iframe.height = "525";
-    iframe.style.border = "1px solid #eee";
-    
-    widgetRef.current?.appendChild(iframe);
-    
-    const copyright = document.createElement('div');
-    copyright.id = "fx-pricing-widget-copyright";
-    copyright.innerHTML = `
-      <div style="text-align: center; font-size: 13px; font-family: sans-serif; margin-top: 10px; margin-bottom: 10px; color: #9db2bd;">
-        Powered by <a href="https://fxpricing.com/" target="_blank" style="text-decoration: unset; color: #bb3534; font-weight: 600;">FX Pricing</a>
-      </div>
-    `;
-    
-    widgetRef.current?.appendChild(copyright);
-  }, [currencyPair]);
+      // Create and configure the TradingView widget container
+      const widgetContainer = document.createElement('div');
+      widgetContainer.className = 'tradingview-widget-container15';
+
+      const widgetSubContainer = document.createElement('div');
+      widgetSubContainer.className = 'tradingview-widget-container__widget15';
+
+      widgetContainer.appendChild(widgetSubContainer);
+
+      // Create and configure the TradingView script element
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js';
+      script.async = true;
+      script.innerHTML = JSON.stringify({
+        interval: '1m',
+        width: '100%',
+        isTransparent: false,
+        height: '100%',
+        symbol: symbol,
+        showIntervalTabs: true,
+        displayMode: 'multiple',
+        locale: 'en',
+        colorTheme: 'dark',
+      });
+
+      widgetContainer.appendChild(script);
+
+      // Create and configure the copyright element
+      const copyright = document.createElement('div');
+      copyright.className = 'tradingview-widget-copyright15';
+
+      widgetContainer.appendChild(copyright);
+
+      // Append the container to the ref element
+      widgetRef.current.appendChild(widgetContainer);
+
+      // Cleanup function to remove the widget when the component unmounts
+      return () => {
+        if (widgetRef.current) {
+          widgetRef.current.innerHTML = '';
+        }
+      };
+    }
+  }, [symbol]);
 
   return (
-    <div ref={widgetRef}></div>
+    <div
+      ref={widgetRef}
+      style={{ width: '100%', height: '80vh', border: '1px solid #eee' }}
+    ></div>
   );
 };
 

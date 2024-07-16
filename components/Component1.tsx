@@ -67,7 +67,7 @@ Built on top Forex Api for first hand and correct information
           className="flex select-none items-center text-left  gap-2 rounded-lg py-2 px-6  align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
-      ANALYTICS
+    Features
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -108,7 +108,7 @@ Built on forex bot that analysis the market, the chart and the news and then cal
           className="flex select-none items-center text-left  gap-2 rounded-lg py-2 px-6  align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
-    BOT
+    BOT ANALYTICS
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
