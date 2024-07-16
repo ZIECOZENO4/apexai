@@ -7,7 +7,7 @@ interface NewsArticle {
   description: string;
   url: string;
   publishedAt: string;
-  urlToImage: string | null; // Add the urlToImage property
+  urlToImage: string | null;
 }
 
 interface ForexNewsWidgetProps {
@@ -25,7 +25,17 @@ const ForexNewsWidget: React.FC<ForexNewsWidgetProps> = ({ currency }) => {
         const response = await fetch(
           `https://newsapi.org/v2/everything?q=${currency}&language=en&apiKey=7da74f6622cf4f4d85593a1ff47ffcf9`
         );
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
         const data = await response.json();
+
+        if (!data.articles || !Array.isArray(data.articles)) {
+          throw new Error('Invalid data format');
+        }
+
         setNews(data.articles);
       } catch (err) {
         setError('Failed to fetch news.');
@@ -38,7 +48,7 @@ const ForexNewsWidget: React.FC<ForexNewsWidgetProps> = ({ currency }) => {
   }, [currency]);
 
   if (loading) {
-    return <p>Loading news...</p>;
+    return <p>Loading {currency} news...</p>;
   }
 
   if (error) {
@@ -68,7 +78,7 @@ const ForexNewsWidget: React.FC<ForexNewsWidgetProps> = ({ currency }) => {
           ))}
         </ul>
       ) : (
-        <p>No news articles available.</p>
+        <p>No news articles for {currency} available.</p>
       )}
     </div>
   );
