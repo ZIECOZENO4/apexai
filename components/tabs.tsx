@@ -4,7 +4,7 @@ import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 import EconomicCalendar from "./Calendar";
 import TopStories from "./TopStories";
 import ForexMatrix from "./ForexMatrix";
-import FXSWidget from "./FXSWidget";
+import Component5 from "./Component5";
 
 export default function NewsTabs() {
   return (
@@ -18,7 +18,7 @@ export default function NewsTabs() {
         <Tab key="forex" title="Forex" className="w-full text-center">
           <Card className="flex items-center justify-center min-h-screen w-full">
             <CardBody className="flex items-center justify-center w-full">
-              <FXSWidget />
+              <Component5 />
             </CardBody>
           </Card>
         </Tab>

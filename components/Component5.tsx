@@ -62,18 +62,17 @@ const Component5: React.FC = () => {
   }
 
   return (
-    <div className="trending-news-widget my-10 mb-24 mt-14">
+    <div className="trending-news-widget mb-24">
       {forexPairs.map((pair) => (
-        <div key={pair} className="pair-news mb-8">
-          <h3 className="text-lg font-semibold">{pair}</h3>
-          {news[pair] && news[pair].length > 0 ? (
+        news[pair] && news[pair].length > 0 && (
+          <div key={pair} className="pair-news mb-8">
             <ul>
               {news[pair].map((article, index) => (
-                <li key={index} className="mb-8  gap-8">
+                <li key={index} className="mb-8 gap-8 text-left">
                   <a href={article.article_url} target="_blank" rel="noopener noreferrer" className="flex gap-4">
                     <div>
                       <h4 className="font-medium text-md my-2">{article.article_title}</h4>
-                      <img src={article.article_photo_url} alt={article.article_title} className="w-full h-32 object-cover " />
+                      <img src={article.article_photo_url} alt={article.article_title} className="w-full h-32 object-cover" />
                       <p className='text-sm my-2 text-slate-400'>Source: <span className='hover:underline'>{article.source}</span> </p>
                       <span className="text-xs text-blue-800">{new Date(article.post_time_utc).toLocaleString()}</span>
                       <hr />
@@ -82,10 +81,8 @@ const Component5: React.FC = () => {
                 </li>
               ))}
             </ul>
-          ) : (
-            <p>No news articles available.</p>
-          )}
-        </div>
+          </div>
+        )
       ))}
     </div>
   );
