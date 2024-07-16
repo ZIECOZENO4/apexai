@@ -16,6 +16,7 @@ const TradingViewWidget: React.FC<TradingViewWidgetProps> = ({ symbol }) => {
     script.innerHTML = `
       {
         "autosize": true,
+        "height": "700",
         "symbol": "${symbol}",
         "interval": "D",
         "timezone": "Etc/UTC",

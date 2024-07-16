@@ -7,6 +7,7 @@ import FXPricingWidget from './Average';
 import TickerQuoteWidget from './TickerQuoteWidget';
 import PipCalculatorWidget from './PipCalculatorWidget';
 import FibonacciCalculatorWidget from './FibonacciCalculatorWidget';
+import ForexNewsWidget from './ForexNewsWidget';
 
 const DynamicPage: React.FC = () => {
   const router = useRouter();
@@ -31,6 +32,7 @@ const DynamicPage: React.FC = () => {
           <TickerQuoteWidget currency={currency} />
           <PipCalculatorWidget currencyPair={currency} />
           <FibonacciCalculatorWidget />
+          <ForexNewsWidget currency={currency} />
         </div>
       ) : (
         <p>Loading...</p>
