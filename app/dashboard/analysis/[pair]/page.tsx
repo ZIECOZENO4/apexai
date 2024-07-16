@@ -23,7 +23,7 @@ const DynamicPage: React.FC = () => {
   const currency = pair ? pair.toUpperCase() : '';
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto mb-32 w-full mx-0 px-0">
       {pair ? (
         <div>
           <TradingViewWidget symbol={symbol} />

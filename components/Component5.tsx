@@ -1,87 +1,92 @@
-"use client";
+'use client';
 
 import React, { useEffect, useState } from 'react';
 
+const forexPairs = [
+  "EURUSD", "USDJPY", "GBPUSD", "AUDUSD", "USDCAD", "USDCHF", "NZDUSD",
+  "EURGBP", "EURJPY", "GBPJPY", "AUDJPY", "AUDNZD", "NZDJPY", "EURAUD",
+  "EURCHF", "CHFJPY", "CADJPY", "GBPAUD", "GBPCAD", "GBPCHF", "AUDCAD",
+  "AUDCHF", "NZDCAD", "NZDCHF", "EURCAD", "EURNZD", "CADCHF", "USDHKD",
+  "USDSGD", "USDZAR", "USDMXN", "USDTRY", "USDNOK", "USDSEK", "USDDKK",
+  "USDPLN", "USDCNY", "USDINR", "USDTHB", "USDSAR", "USDILS", "USDIDR",
+  "USDHUF", "USDKRW", "USDCZK", "USDCLP", "USDARS", "USDVEF", "USDVND"
+];
+
 interface NewsArticle {
-  title: string;
-  description: string;
-  url: string;
-  urlToImage: string | null;
-  publishedAt: string;
+  article_title: string;
+  article_url: string;
+  article_photo_url: string;
+  source: string;
+  post_time_utc: string;
 }
 
 const Component5: React.FC = () => {
-  const [forexNews, setForexNews] = useState<NewsArticle[]>([]);
-  const [cryptoNews, setCryptoNews] = useState<NewsArticle[]>([]);
-  const [stockNews, setStockNews] = useState<NewsArticle[]>([]);
+  const [news, setNews] = useState<{ [key: string]: NewsArticle[] }>({});
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchNews = async (query: string, setNews: React.Dispatch<React.SetStateAction<NewsArticle[]>>) => {
+    const fetchAllNews = async () => {
       try {
-        const response = await fetch(
-          `https://newsapi.org/v2/everything?q=${query}&apiKey=YOUR_NEWSAPI_KEY`
-        );
-        const data = await response.json();
+        const newsPromises = forexPairs.map(pair => {
+          const formattedCurrency = pair.slice(0, 3) + '_' + pair.slice(3);
+          return fetch(`/api/currency-news?currency=${formattedCurrency}`)
+            .then(response => response.json())
+            .then(data => ({ pair, news: data.data.news }))
+            .catch(() => ({ pair, news: [] }));
+        });
 
-        if (data.articles) {
-          setNews(data.articles);
-        } else {
-          setError(`No ${query} news articles found.`);
-        }
+        const results = await Promise.all(newsPromises);
+        const newsData = results.reduce((acc, { pair, news }) => {
+          acc[pair] = news;
+          return acc;
+        }, {} as { [key: string]: NewsArticle[] });
+
+        setNews(newsData);
       } catch (err) {
-        setError(`Failed to fetch ${query} news.`);
+        setError('Failed to fetch news');
       } finally {
         setLoading(false);
       }
     };
 
-    fetchNews('forex', setForexNews);
-    fetchNews('cryptocurrency', setCryptoNews);
-    fetchNews('stock market', setStockNews);
+    fetchAllNews();
   }, []);
 
   if (loading) {
-    return <p>Loading news...</p>;
+    return <p>Loading trending forex news...</p>;
   }
 
   if (error) {
     return <p>{error}</p>;
   }
 
-  const renderNews = (news: NewsArticle[], category: string) => (
-    <div className="news-category mb-8 gap-4">
-      {news.length > 0 ? (
-        <ul>
-          {news.map((article, index) => (
-            <li key={index} className="mb-4">
-              <a href={article.url} target="_blank" rel="noopener noreferrer">
-                {article.urlToImage && (
-                  <img
-                    src={article.urlToImage}
-                    alt={article.title}
-                    className="w-full h-48 object-cover mb-2"
-                  />
-                )}
-                <h3 className="text-lg font-semibold">{article.title}</h3>
-                <p>{article.description}</p>
-                <span className="text-sm text-blue-800">{new Date(article.publishedAt).toLocaleString()}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No news articles available.</p>
-      )}
-    </div>
-  );
-
   return (
-    <div className="news-widget container mx-auto p-4">
-      {renderNews(forexNews, 'Forex')}
-      {renderNews(cryptoNews, 'Crypto')}
-      {renderNews(stockNews, 'Stock Market')}
+    <div className="trending-news-widget my-10 mb-24 mt-14">
+      {forexPairs.map((pair) => (
+        <div key={pair} className="pair-news mb-8">
+          <h3 className="text-lg font-semibold">{pair}</h3>
+          {news[pair] && news[pair].length > 0 ? (
+            <ul>
+              {news[pair].map((article, index) => (
+                <li key={index} className="mb-8  gap-8">
+                  <a href={article.article_url} target="_blank" rel="noopener noreferrer" className="flex gap-4">
+                    <div>
+                      <h4 className="font-medium text-md my-2">{article.article_title}</h4>
+                      <img src={article.article_photo_url} alt={article.article_title} className="w-full h-32 object-cover " />
+                      <p className='text-sm my-2 text-slate-400'>Source: <span className='hover:underline'>{article.source}</span> </p>
+                      <span className="text-xs text-blue-800">{new Date(article.post_time_utc).toLocaleString()}</span>
+                      <hr />
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No news articles available.</p>
+          )}
+        </div>
+      ))}
     </div>
   );
 };
