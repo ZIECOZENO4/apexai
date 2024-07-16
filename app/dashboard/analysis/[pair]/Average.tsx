@@ -33,7 +33,7 @@ const FXPricingWidget: React.FC<FXPricingWidgetProps> = ({ symbol}) => {
         interval: '1m',
         width: '100%',
         isTransparent: false,
-        height: '100%',
+        height: '300vh',
         symbol: symbol,
         showIntervalTabs: true,
         displayMode: 'multiple',
@@ -64,7 +64,7 @@ const FXPricingWidget: React.FC<FXPricingWidgetProps> = ({ symbol}) => {
   return (
     <div
       ref={widgetRef}
-      style={{ width: '100%', height: '80vh', border: '1px solid #eee' }}
+      style={{ width: '100%', height: '300vh', border: '1px solid #eee' }}
     ></div>
   );
 };
