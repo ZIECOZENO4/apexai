@@ -64,7 +64,7 @@ const FXPricingWidget: React.FC<FXPricingWidgetProps> = ({ symbol}) => {
   return (
     <div
       ref={widgetRef}
-      style={{ width: '100%', height: '200vh', border: '1px solid #eee' }}
+      style={{ width: '100%', height: '800', border: '1px solid #eee' }}
     ></div>
   );
 };

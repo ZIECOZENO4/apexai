@@ -1,40 +1,44 @@
+
 "use client"
-import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from 'react';
 
-const   Component6 = () => {
-  const widgetRef = useRef<HTMLDivElement>(null);
-
+const Conponent6 = () => {
   useEffect(() => {
     const script = document.createElement('script');
+    script.type = 'text/javascript';
     script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-screener.js';
     script.async = true;
-    script.textContent = JSON.stringify({
-      width: '100%',
-      height: '1000vh',
-      defaultColumn: 'overview',
-      defaultScreen: 'general',
-      market: 'forex',
-      showToolbar: true,
-      colorTheme: 'dark',
-      locale: 'en',
+    script.innerHTML = JSON.stringify({
+      "autosize": true,
+           "height": "3000",
+      "defaultColumn": "overview",
+      "screener_type": "crypto_mkt",
+      "displayCurrency": "USD",
+      "colorTheme": "dark",
+      "locale": "en"
     });
-    widgetRef.current?.appendChild(script);
+
+    const widgetContainer = document.querySelector('.tradingview-widget-container__widget2');
+    if (widgetContainer) {
+      widgetContainer.appendChild(script);
+    }
+
+    return () => {
+      // Check if the script is still a child of the widgetContainer before removing it
+      if (widgetContainer && script.parentNode === widgetContainer) {
+        widgetContainer.removeChild(script);
+      }
+    };
   }, []);
 
   return (
-    <motion.div
-      ref={widgetRef}
-      className="bg-gray-900 text-white rounded-lg shadow-lg"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="tradingview-widget-container2">
-        <div className="tradingview-widget-container__widget2"></div>
+    <div className="tradingview-widget-container2">
+      <div className="tradingview-widget-container__widget2"></div>
+      <div className="tradingview-widget-copyright2">
+    
       </div>
-    </motion.div>
+    </div>
   );
 };
 
-export default   Component6;
+export default Conponent6;

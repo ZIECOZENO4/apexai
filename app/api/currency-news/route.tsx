@@ -57,31 +57,14 @@
 
 import { NextResponse } from 'next/server';
 import https from 'https';
-import Redis from 'ioredis';
-
-const REDIS_URL = process.env.REDIS_URL;
-
-if (!REDIS_URL) {
-  throw new Error('REDIS_URL is not defined in the environment variables');
-}
-
-const redis = new Redis(REDIS_URL);
 
 type CacheEntry = {
   data: any;
   timestamp: number;
 };
 
-const CACHE_DURATION = 24 * 60 * 60; // 24 hours in seconds
-
-async function getFromCache(key: string) {
-  const data = await redis.get(key);
-  return data ? JSON.parse(data) : null;
-}
-
-async function setInCache(key: string, value: any, ttl: number) {
-  await redis.set(key, JSON.stringify(value), 'EX', ttl);
-}
+const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+const cache: Record<string, CacheEntry> = {};
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -94,10 +77,11 @@ export async function GET(request: Request) {
   const [from_symbol, to_symbol] = currency.split('_');
   const cacheKey = `${from_symbol}_${to_symbol}`;
 
-  // Check if the data is in the cache
-  const cachedData = await getFromCache(cacheKey);
-  if (cachedData) {
-    return NextResponse.json(cachedData);
+  // Check if the data is in the cache and hasn't expired
+  const cachedEntry = cache[cacheKey];
+  const now = Date.now();
+  if (cachedEntry && (now - cachedEntry.timestamp < CACHE_DURATION)) {
+    return NextResponse.json(cachedEntry.data);
   }
 
   const fetchCurrencyNews = (from_symbol: string, to_symbol: string): Promise<any> => {
@@ -122,7 +106,11 @@ export async function GET(request: Request) {
 
         res.on('end', () => {
           const body = Buffer.concat(chunks);
-          resolve(JSON.parse(body.toString()));
+          if (res.statusCode !== 200) {
+            reject(new Error(`Failed to fetch data, status code: ${res.statusCode}`));
+          } else {
+            resolve(JSON.parse(body.toString()));
+          }
         });
       });
 
@@ -136,9 +124,9 @@ export async function GET(request: Request) {
 
   try {
     const data = await fetchCurrencyNews(from_symbol, to_symbol);
-    
+
     // Store the fetched data in the cache
-    await setInCache(cacheKey, data, CACHE_DURATION);
+    cache[cacheKey] = { data, timestamp: now };
     
     return NextResponse.json(data);
   } catch (error) {
