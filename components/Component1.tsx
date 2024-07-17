@@ -108,7 +108,7 @@ Built on forex bot that analysis the market, the chart and the news and then cal
           className="flex select-none items-center text-left  gap-2 rounded-lg py-2 px-3  align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
-    BOT ANALYTICS
+    BOT ANALYSIS
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

@@ -4,7 +4,7 @@ import React from 'react'
 
 const BotPage = () => {
   return (
-    <div className='flex flex-col aligm-middle items-center p-0 m-0'>
+    <div className='flex flex-col aligm-middle items-center p-0 m-0 mb-32'>
      <Rate2 />
      <BotList />
     </div>
