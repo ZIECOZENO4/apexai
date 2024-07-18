@@ -5,7 +5,10 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     console.log('Received request with body:', body);
 
-    const response = await fetch('http://127.0.0.1:8000/api/compare-chart', {
+    // Update the backend URL to the deployed FastAPI backend URL
+    const backendUrl = process.env.FASTAPI_BACKEND_URL || 'http://127.0.0.1:8000';
+
+    const response = await fetch(`${backendUrl}/api/compare-chart`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
