@@ -9,6 +9,7 @@ interface TradingViewWidgetProps {
 const TradingViewWidget: React.FC<TradingViewWidgetProps> = ({ symbol }) => {
   const container = useRef<HTMLDivElement>(null);
   const [message, setMessage] = useState<string | null>(null);
+  const [processStatus, setProcessStatus] = useState<string | null>(null);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -40,6 +41,14 @@ const TradingViewWidget: React.FC<TradingViewWidgetProps> = ({ symbol }) => {
         "support_host": "https://www.tradingview.com"
       }`;
     container.current?.appendChild(script);
+
+    setProcessStatus('Waiting for graph to load...');
+    const timer = setTimeout(() => {
+      setProcessStatus('Checking graph...');
+      captureChart();
+    }, 20000); // 20 seconds
+
+    return () => clearTimeout(timer);
   }, [symbol]);
 
   const captureChart = async () => {
@@ -48,6 +57,7 @@ const TradingViewWidget: React.FC<TradingViewWidgetProps> = ({ symbol }) => {
 
     const canvas = await html2canvas(chartElement);
     const chartDataUrl = canvas.toDataURL('image/png');
+    setProcessStatus('Captured chart. Sending for analysis...');
     compareChart(chartDataUrl);
   };
 
@@ -60,10 +70,15 @@ const TradingViewWidget: React.FC<TradingViewWidgetProps> = ({ symbol }) => {
         },
         body: JSON.stringify({ chartDataUrl }),
       });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const data = await response.json();
       setMessage(data.result);
+      setProcessStatus('Analysis complete.');
     } catch (error) {
       console.error('Error comparing chart:', error);
+      setProcessStatus('Error during analysis.');
     }
   };
 
@@ -72,8 +87,11 @@ const TradingViewWidget: React.FC<TradingViewWidgetProps> = ({ symbol }) => {
       <div className="tradingview-widget-container" ref={container} style={{ height: "400%", width: "100%" }}>
         <div className="tradingview-widget-container__widget" style={{ height: "calc(400% - 32px)", width: "100%" }}></div>
       </div>
-      <button onClick={captureChart}>Analyze Chart</button>
-      {message && <p>{message}</p>}
+    <div className="m-4  text-center font-serif gap-4">
+    {processStatus && <p>{processStatus}</p>}
+    {message && <p>{message}</p>}
+      </div>  
+      
     </div>
   );
 };
