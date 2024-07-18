@@ -60,9 +60,9 @@ const HomeUi = () => {
   </div>
   <Rating />
 <Carousel />
-<Statistics />
+
 <ForexBotFeatures />
-<Testimonial />
+
 <FAQ />
 <Note />
 </div>
