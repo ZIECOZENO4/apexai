@@ -190,10 +190,10 @@ const TradingViewWidget: React.FC<TradingViewWidgetProps> = ({ symbol }) => {
       <div className="tradingview-widget-container" ref={container} style={{ height: "400%", width: "100%" }}>
         <div className="tradingview-widget-container__widget" style={{ height: "calc(400% - 32px)", width: "100%" }}></div>
       </div>
-      <div className="m-4  text-center font-serif gap-4">
+      {/* <div className="m-4  text-center font-serif gap-4">
     {processStatus && <p>{processStatus}</p>}
     {message && <p>{message}</p>}
-      </div>  
+      </div>   */}
       
     </div>
   );
