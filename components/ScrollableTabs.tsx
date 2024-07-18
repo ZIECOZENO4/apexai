@@ -17,7 +17,7 @@ const tabs = [
   { id: "section3", label: "Market", Component: Component3 },
   { id: "section4", label: "Exchange", Component: Component4 },
   { id: "section5", label: "Crypto", Component: Component6 },
-  { id: "section6", label: "Treading News", Component: Component5 },
+  { id: "section6", label: "Trending News", Component: Component5 },
 ];
 
 const ScrollableTabs = () => {
