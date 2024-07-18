@@ -22,7 +22,7 @@ export function SearchInput() {
   };
   return (
     <div className="h-[7rem] flex flex-col justify-center  w-full m-2 items-center">
-      <h2 className="my-2 text-xs text-center font-bold sm:text-5xl dark:text-white text-black">
+      <h2 className="my-2 text-xs text-center font-bold sm:text-2xl dark:text-white text-black">
        Forex AI Bot: Ask anything
       </h2>
       <PlaceholdersAndVanishInput

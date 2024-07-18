@@ -33,7 +33,7 @@ const  Component2 = () => {
   return (
     <motion.div
       ref={widgetRef}
-      className="bg-gray-900 text-white rounded-lg shadow-lg"
+      className="bg-gray-900 text-white rounded-lg md:w-[58vw] md:ml-[20vw] shadow-lg"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

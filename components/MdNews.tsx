@@ -20,7 +20,7 @@ interface NewsArticle {
   post_time_utc: string;
 }
 
-const TrendingForexNews: React.FC = () => {
+const MdNews: React.FC = () => {
   const [news, setNews] = useState<{ [key: string]: NewsArticle[] }>({});
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -62,7 +62,8 @@ const TrendingForexNews: React.FC = () => {
   }
 
   return (
-    <div className="trending-news-widget mb-24  md:w-[58vw] md:ml-[20vw] ">
+    <div className="trending-news-widget mb-24 md:w-full align-top ml-4">
+        <h1 className=' text-2xl mb-4 text-center font-serif text-blue-800 '>Trending Updates</h1>
       {forexPairs.map((pair) => (
         news[pair] && news[pair].length > 0 && (
           <div key={pair} className="pair-news mb-8">
@@ -71,10 +72,10 @@ const TrendingForexNews: React.FC = () => {
                 <li key={index} className="mb-8 gap-8 text-left">
                   <a href={article.article_url} target="_blank" rel="noopener noreferrer" className="flex gap-4">
                     <div>
-                      <h4 className="font-medium text-md md:text-xl my-2">{article.article_title}</h4>
-                      <img src={article.article_photo_url} alt={article.article_title} className="md:w-[58vw] md:h-[200px] h-32 object-cover" />
-                      <p className='text-sm my-2 md:text-md text-slate-400'>Source: <span className='hover:underline'>{article.source}</span> </p>
-                      <span className="text-xs md:text-sm text-blue-800">{new Date(article.post_time_utc).toLocaleString()}</span>
+                      <h4 className="font-medium text-md my-2">{article.article_title}</h4>
+                      <img src={article.article_photo_url} alt={article.article_title} className="w-full h-32 object-cover" />
+                      <p className='text-sm my-2 text-slate-400'>Source: <span className='hover:underline'>{article.source}</span> </p>
+                      <span className="text-xs text-blue-800">{new Date(article.post_time_utc).toLocaleString()}</span>
                       <hr />
                     </div>
                   </a>
@@ -88,4 +89,4 @@ const TrendingForexNews: React.FC = () => {
   );
 };
 
-export default TrendingForexNews;
+export default MdNews;

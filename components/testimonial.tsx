@@ -19,14 +19,14 @@ const Testimonial = () => {
           duration: 0.5,
           ease: [0.4, 0.0, 0.2, 1],
         }}
-        className="text-4xl p-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
+        className="text-4xl p-4 md:text-4xl lg:text-5xl font-bold  text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
       >
         Testimonials
         <br />
-        <p className=" text-blue-700 text-xs">What others say...</p>
+        <p className=" text-blue-700 text-xs md:text-md">What others say...</p>
      
       </motion.h1>
-<div className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
+<div className="max-w-md py-4 px-8 md:mx-8 bg-white shadow-lg rounded-lg my-20">
   <div className="flex justify-center md:justify-end -mt-16">
     <img alt='author' className="w-20 h-20 object-cover rounded-full border-2 border-indigo-500" src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"/>
   </div>

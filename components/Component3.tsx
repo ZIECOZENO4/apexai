@@ -52,7 +52,7 @@ const Component3 = () => {
   }, []);
 
   return (
-    <div className="tradingview-widget-container p-0 m-0">
+    <div className="tradingview-widget-container p-0 m-0  md:w-[58vw] md:ml-[20vw] ">
       <div className="tradingview-widget-container__widget m-0 p-0"></div>
     </div>
   );

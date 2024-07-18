@@ -9,7 +9,7 @@ import TrendingForexNews from "./Component5";
 
 export default function NewsTabs() {
   return (
-    <div className="flex w-full flex-col items-center m-0 p-0 overflow-x-scroll h-full  whitespace-nowrap scrollbar-hide">
+    <div className="flex w-full md:w-[60vw] flex-col items-center m-0 p-0 overflow-x-scroll h-full  whitespace-nowrap scrollbar-hide">
       <Tabs
         aria-label="News Tabs"
         color="primary"

@@ -89,7 +89,12 @@ export async function Header() {
           </div>
          
         ) : (
-          
+          <div className=" flex gap-4">
+          <Link href="/login" className='hidden md:flex'>
+          <button className="px-8 py-1 mx-4 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
+Log In
+</button>
+          </Link>
           <Link href="/signup">
              <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block">
           <span className="absolute inset-0 overflow-hidden rounded-full">
@@ -116,7 +121,7 @@ export async function Header() {
           <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
         </button>
           </Link>
-       
+          </div>
         )}
       
       </div>

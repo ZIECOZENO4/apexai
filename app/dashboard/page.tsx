@@ -12,7 +12,7 @@ export const metadata = {
 export default async function IndexPage() {
 
   return (
-    <div className='flex flex-col aligm-middle items-center mb-32 w-[100vw] overflow-x-hidden min-h-screen'>
+    <div className='flex flex-col aligm-middle items-center mb-32 w-[100vw]  overflow-x-hidden min-h-screen'>
 <Rate />
 <SearchInput />
 <ScrollableTabs />

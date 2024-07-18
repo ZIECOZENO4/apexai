@@ -45,7 +45,7 @@ const Rating = () => {
 			</defs>
 		</svg>
 		<div>
-		Best Forex Analyser
+		<p className="md:text-2xl">Best Forex Analyser</p>
 		</div>
 
 		<div>
@@ -89,8 +89,8 @@ const Rating = () => {
 		</div>
 
 	</div>
-	<div className="flex justify-between align-middle gap-8 px-24">
-	<div className="text-lg text-center font-semibold w-52">
+	<div className="flex justify-between align-middle gap-8 px-32 md:px-24">
+	<div className="text-lg text-center font-semibold md:text-2xl w-52">
 		90%
 		<div className="flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true"
 				role="presentation" focusable="false"
@@ -121,7 +121,7 @@ const Rating = () => {
 			</svg></div>
 
 	</div>
-	<div className=" w-52 ">
+	<div className=" w-52 md:text-2xl">
 		<div className="text-lg text-center font-semibold">
 			100%
 

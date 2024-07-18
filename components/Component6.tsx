@@ -32,7 +32,7 @@ const Conponent6 = () => {
   }, []);
 
   return (
-    <div className="tradingview-widget-container2">
+    <div className="tradingview-widget-container2 ">
       <div className="tradingview-widget-container__widget2"></div>
       <div className="tradingview-widget-copyright2">
     

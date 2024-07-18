@@ -14,16 +14,16 @@ const Component1 = () => {
       />
     </div>
     <div className="p-3">
-      <h6 className="mb-4 block font-sans text-base font-semibold text-left  text-md uppercase leading-relaxed tracking-normal text-blue-800 antialiased">
+      <h6 className="mb-4 block font-sans text-base font-semibold text-left md:text-2xl text-md uppercase leading-relaxed tracking-normal text-blue-800 antialiased">
       AI Powered
       </h6>
-      <h4 className=" block font-sans text-xs text-left font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+      <h4 className=" block font-sans text-xs md:text-xl text-left font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
 Built on top Chat gbt 4.o  and Claude Opus
       </h4>
 
       <Link className="inline-block text-left underline" href="/">
         <button
-          className="flex select-none items-center text-left  gap-2 rounded-lg py-2 px-6  align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          className="flex select-none items-center text-left  gap-2 rounded-lg py-2 px-6 md:text-muted-foreground align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
       Ask AI
@@ -55,16 +55,16 @@ Built on top Chat gbt 4.o  and Claude Opus
       />
     </div>
     <div className="p-3">
-      <h6 className="mb-4 block font-sans text-base font-semibold text-left  text-md uppercase leading-relaxed tracking-normal text-blue-800 antialiased">
+      <h6 className="mb-4 block font-sans text-base font-semibold text-left  text-md md:text-2xl uppercase leading-relaxed tracking-normal text-blue-800 antialiased">
      Forex Powered
       </h6>
-      <h4 className=" block font-sans text-xs text-left font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+      <h4 className=" block font-sans text-xs text-left md:text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
 Built on top Forex Api for first hand and correct information
       </h4>
 
       <Link className="inline-block text-left underline" href="/dashboard">
         <button
-          className="flex select-none items-center text-left  gap-2 rounded-lg py-2 px-6  align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          className="flex select-none items-center text-left md:text-md  gap-2 rounded-lg py-2 px-6  align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
     Features
@@ -96,16 +96,16 @@ Built on top Forex Api for first hand and correct information
       />
     </div>
     <div className="p-3">
-      <h6 className="mb-4 block font-sans text-base font-semibold text-left  text-md uppercase leading-relaxed tracking-normal text-blue-800 antialiased">
+      <h6 className="mb-4 block font-sans text-base font-semibold text-left  text-md md:text-2xl uppercase leading-relaxed tracking-normal text-blue-800 antialiased">
    Forex Bot
       </h6>
-      <h4 className=" block font-sans text-xs text-left font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+      <h4 className=" block font-sans text-xs text-left font-semibold leading-snug md:text-xl tracking-normal text-blue-gray-900 antialiased">
 Built on forex bot that analysis the market, the chart and the news and then calculate the buy or sale possibilities
       </h4>
 
       <Link className="inline-block text-left underline" href="/dashboard/bot">
         <button
-          className="flex select-none items-center text-left  gap-2 rounded-lg py-2 px-3  align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          className="flex select-none items-center text-left md:text-md  gap-2 rounded-lg py-2 px-3  align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
     BOT ANALYSIS
@@ -137,16 +137,16 @@ Built on forex bot that analysis the market, the chart and the news and then cal
       />
     </div>
     <div className="p-3">
-      <h6 className="mb-4 block font-sans text-base font-semibold text-left  text-md uppercase leading-relaxed tracking-normal text-blue-800 antialiased">
+      <h6 className="mb-4 block font-sans text-base font-semibold text-left md:text-2xl  text-md uppercase leading-relaxed tracking-normal text-blue-800 antialiased">
      MODERN TECH
       </h6>
-      <h4 className=" block font-sans text-xs text-left font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+      <h4 className=" block font-sans text-xs text-left md:text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
 Built with the best technology to ensure safety and good user interactions
       </h4>
 
       <Link className="inline-block text-left underline" href="/dasboard/contact">
         <button
-          className="flex select-none items-center text-left  gap-2 rounded-lg py-2 px-6  align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          className="flex select-none items-center text-left md:text-md gap-2 rounded-lg py-2 px-6  align-middle font-sans text-xs font-bold uppercase text-blue-800 transition-all hover:bg-blue-800/10 active:bg-blue-800/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
       CONTACT
