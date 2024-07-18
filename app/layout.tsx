@@ -17,7 +17,7 @@ export const metadata = {
     default: 'Forex Bot AI',
     template: `%s - Forex AI Chatbot`
   },
-  description: 'An AI-powered Forex Bot  built with Phython, Claude Opus and Open Ai.',
+  description: 'An AI-powered Forex Bot  built with Python, Next.js 14, Claude Opus and Open Ai.',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
