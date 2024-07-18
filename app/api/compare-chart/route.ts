@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     console.log('Received request with body:', body);
 
-    const response = await fetch('http://127.0.0.1:8000/api/compare-chart', {
+    const response = await fetch('http://127.0.0.1:8000/start_fastapi', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
