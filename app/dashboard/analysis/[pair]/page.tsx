@@ -6,6 +6,7 @@ import Exchange from './Exchange';
 import FXPricingWidget from './Average';
 import TickerQuoteWidget from './TickerQuoteWidget';
 import ForexNewsWidget from './ForexNewsWidget';
+import TradingViewWidget4 from './Deriv';
 
 const DynamicPage: React.FC = () => {
   const router = useRouter();
@@ -27,6 +28,7 @@ const DynamicPage: React.FC = () => {
           <TickerQuoteWidget symbol={symbol} />
           <TradingViewWidget symbol={symbol} />
           <FXPricingWidget symbol={symbol} />
+          <TradingViewWidget4 symbol={symbol}/>
           <Exchange currency={currency} />
           <ForexNewsWidget currency={currency} />
         </div>
