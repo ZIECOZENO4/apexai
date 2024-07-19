@@ -15,6 +15,7 @@ const TradingViewWidget4: React.FC<TradingViewWidgetProps> = ({ symbol }) => {
     script.innerHTML = `
       {
         "autosize": true,
+        "height": "500",
         "symbol": "${symbol}",
         "interval": "D",
         "timezone": "Etc/UTC",
@@ -38,8 +39,8 @@ const TradingViewWidget4: React.FC<TradingViewWidgetProps> = ({ symbol }) => {
   }, []);
 
   return (
-    <div className="tradingview-widget-container0" ref={container} style={{ height: "1000", width: "100%" }}>
-      <div className="tradingview-widget-container__widget0" style={{ height: "calc(1000 - 32px)", width: "100%" }}></div>
+    <div className="tradingview-widget-container90" ref={container} style={{ height: "500", width: "100%" }}>
+      <div className="tradingview-widget-container__widget90" style={{ height: "calc(500 - 32px)", width: "100%" }}></div>
     </div>
   );
 };
