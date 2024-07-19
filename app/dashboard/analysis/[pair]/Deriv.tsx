@@ -31,15 +31,15 @@ const TradingViewWidget4: React.FC<TradingViewWidgetProps> = ({ symbol }) => {
         ],
         "show_popup_button": true,
         "popup_width": "100%",
-        "popup_height": "500",
+        "popup_height": "1000",
         "support_host": "https://www.tradingview.com"
       }`;
     container.current?.appendChild(script);
   }, []);
 
   return (
-    <div className="tradingview-widget-container0" ref={container} style={{ height: "500", width: "100%" }}>
-      <div className="tradingview-widget-container__widget0" style={{ height: "calc(500 - 32px)", width: "100%" }}></div>
+    <div className="tradingview-widget-container0" ref={container} style={{ height: "1000", width: "100%" }}>
+      <div className="tradingview-widget-container__widget0" style={{ height: "calc(1000 - 32px)", width: "100%" }}></div>
     </div>
   );
 };
