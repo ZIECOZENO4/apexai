@@ -3,67 +3,69 @@ import pandas as pd
 import json
 import os
 from dotenv import load_dotenv
+from http.server import BaseHTTPRequestHandler
 
-# Load environment variables from .env file
-load_dotenv()
+class handler(BaseHTTPRequestHandler):
 
-# Retrieve environment variables
-account = int(os.getenv("MT5_ACCOUNT"))
-password = os.getenv("MT5_PASSWORD")
-server = os.getenv("MT5_SERVER")
+    def do_GET(self):
+        load_dotenv()
 
-# Initialize MT5 connection
-if not mt5.initialize():
-    print("initialize() failed, error code =", mt5.last_error())
-    quit()
+        account = int(os.getenv("MT5_ACCOUNT"))
+        password = os.getenv("MT5_PASSWORD")
+        server = os.getenv("MT5_SERVER")
 
-# Log in to your MT5 account
-login_result = mt5.login(account, password, server)
+        if not mt5.initialize():
+            self.send_response(500)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b"MT5 initialization failed.")
+            return
 
-if not login_result:
-    print("Login failed, error code =", mt5.last_error())
-    mt5.shutdown()
-    quit()
+        login_result = mt5.login(account, password, server)
 
-# Define the symbol you want to track (example: Volatility 75 Index)
-symbol = "VOLATILITY_75"
+        if not login_result:
+            self.send_response(500)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b"Login failed.")
+            mt5.shutdown()
+            return
 
-# Ensure the symbol is available in Market Watch
-if not mt5.symbol_select(symbol, True):
-    print(f"Failed to select symbol {symbol}, error code =", mt5.last_error())
-    mt5.shutdown()
-    quit()
+        symbol = "VOLATILITY_75"
 
-# Fetch real-time tick data
-def fetch_volatility_data():
-    tick = mt5.symbol_info_tick(symbol)
-    if tick is None:
-        print(f"Failed to get tick for {symbol}, error code =", mt5.last_error())
-        return None
-    return tick
+        if not mt5.symbol_select(symbol, True):
+            self.send_response(500)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b"Symbol selection failed.")
+            mt5.shutdown()
+            return
 
-# Fetch historical data (example: 1-minute bars for the last day)
-def fetch_historical_data():
-    rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M1, 0, 1440)
-    if rates is None:
-        print(f"Failed to get historical data for {symbol}, error code =", mt5.last_error())
-        return None
-    df = pd.DataFrame(rates)
-    df['time'] = pd.to_datetime(df['time'], unit='s')
-    return df
+        tick = mt5.symbol_info_tick(symbol)
+        rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M1, 0, 1440)
 
-# Fetch and save volatility data to a JSON file
-tick_data = fetch_volatility_data()
-historical_data = fetch_historical_data()
+        if tick is None or rates is None:
+            self.send_response(500)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b"Data fetch failed.")
+            mt5.shutdown()
+            return
 
-public_dir = os.path.join(os.path.dirname(__file__), 'public')
+        df = pd.DataFrame(rates)
+        df['time'] = pd.to_datetime(df['time'], unit='s')
 
-if tick_data:
-    with open(os.path.join(public_dir, 'volatility_tick.json'), 'w') as f:
-        json.dump(tick_data._asdict(), f)
+        tick_data = tick._asdict()
+        historical_data = df.to_dict(orient='records')
 
-if historical_data is not None:
-    historical_data.to_json(os.path.join(public_dir, 'volatility_historical.json'), orient='records')
+        response = {
+            'tick_data': tick_data,
+            'historical_data': historical_data
+        }
 
-# Shutdown MT5 connection
-mt5.shutdown()
+        self.send_response(200)
+        self.send_header('Content-type', 'application/json')
+        self.end_headers()
+        self.wfile.write(json.dumps(response).encode())
+
+        mt5.shutdown()
