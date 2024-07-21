@@ -29,12 +29,9 @@ const DynamicPage: React.FC = () => {
           <TickerQuoteWidget symbol={symbol} />
           <TradingViewWidget symbol={symbol} />
           <TradingViewWidget4 symbol={symbol}/>
-          <div>
-            <VolatilityData />
-        </div>
           <Exchange currency={currency} />
           <FXPricingWidget symbol={symbol} />
-          {/* <ForexNewsWidget currency={currency} /> */}
+          <ForexNewsWidget currency={currency} />
         </div>
       ) : (
         <p>Setting Bot...</p>
