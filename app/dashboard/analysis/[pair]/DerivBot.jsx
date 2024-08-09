@@ -1,13 +1,13 @@
-// app/components/TradingBot.tsx
+// app/components/TradingBot.js
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import * as Blockly from 'blockly/core';
+import * as Blockly from 'blockly';
 import 'blockly/blocks';
 import 'blockly/javascript';
 
-const TradingBot: React.FC = () => {
-  const blocklyDiv = useRef<HTMLDivElement>(null);
+const TradingBot = () => {
+  const blocklyDiv = useRef(null);
   const toolbox = `
     <xml xmlns="https://developers.google.com/blockly/xml">
       <block type="controls_if"></block>
