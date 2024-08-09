@@ -8,6 +8,7 @@ import TickerQuoteWidget from './TickerQuoteWidget';
 import ForexNewsWidget from './ForexNewsWidget';
 import TradingViewWidget4 from './Deriv';
 import VolatilityData from '../../../../components/VolatilityData';
+import TradingBot from './DerivBot';
 
 const DynamicPage: React.FC = () => {
   const router = useRouter();
@@ -29,6 +30,7 @@ const DynamicPage: React.FC = () => {
           <TickerQuoteWidget symbol={symbol} />
           <TradingViewWidget symbol={symbol} />
           <TradingViewWidget4 symbol={symbol}/>
+          <TradingBot />
           <Exchange currency={currency} />
           <FXPricingWidget symbol={symbol} />
           <ForexNewsWidget currency={currency} />
