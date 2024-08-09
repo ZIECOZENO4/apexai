@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, memo } from 'react';
-
+import DerivBot from './DerivBot';
 interface TradingViewWidgetProps {
   symbol: string;
 }
@@ -41,6 +41,7 @@ const TradingViewWidget4: React.FC<TradingViewWidgetProps> = ({ symbol }) => {
   return (
     <div className="tradingview-widget-container90" ref={container} style={{ height: "500", width: "100%" }}>
       <div className="tradingview-widget-container__widget90" style={{ height: "calc(500 - 32px)", width: "100%" }}></div>
+      <DerivBot />
     </div>
   );
 };
